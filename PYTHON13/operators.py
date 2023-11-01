@@ -60,4 +60,22 @@ print(id(q)) # immutability
 print(p is q)
 print(p is not q)
 
+#membership operator
+print("----- membership operator -----")
+name = "raj"
+print('a' in name)
+print('z' in name)
+print('z' not in name)
+marks =[98,95,96,98]
+print(98 in marks)
+
+#bitwise operator
+print("----- bitwise operator -----")
+print(12 & 6)
+print(12 | 6)
+print(12 ^ 6)
+print(~6)
+print(~135)
+print(12>>3)
+print(6<<2)
 
