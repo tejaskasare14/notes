@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center">
+   <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">AGE</th>
+          <th scope="col">PHONE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>TEST</td>
+          <td>TEST</td>
+          <td>TEST</td>
+        </tr>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{user.id}}</th>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.phone}}</td>
+        </tr>
+       
+     
+      </tbody>
+    </table>
+</div>
