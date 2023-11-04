@@ -41,6 +41,39 @@ console.log(m[4]);
 console.log(m[4].age);
 console.log(m[7]);
 
+let n = [10,20,11,22,33]
+n.push(30)
+console.log(n);
+n.unshift(40)
+console.log(n);
+n.pop()
+console.log(n);
+n.shift()
+console.log(n);
+
+console.log(n.includes(25));
+console.log(n.indexOf(11));
+console.log(n.slice(0,2));
+
+//object data type
+let city = "thane"
+let salary = 35000
+let emp = {
+   name:"aniket",
+   age:30,
+   city:city,
+   salary, //short hand property  
+   add:(x,y)=>{console.log(x+y)} ,//function inside object
+   department : ["teacher","hr"]
+}
+console.log(emp);
+
+emp["id"] = "ABV78" //dynamic property
+console.log(emp);
+emp.add(55,1)
+console.log(emp);
+console.log(emp.department[0]);
+
 
 
  
