@@ -8,6 +8,7 @@ import { ViewuserComponent } from './viewuser/viewuser.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './user.service';
 import {HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {path:"adduser",component:AdduserComponent},
@@ -22,7 +23,7 @@ const routes:Routes=[
     ViewuserComponent
   ],
   imports: [
-    BrowserModule,RouterModule.forRoot(routes),HttpClientModule
+    BrowserModule,RouterModule.forRoot(routes),HttpClientModule,ReactiveFormsModule,FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

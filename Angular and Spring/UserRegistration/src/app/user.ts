@@ -12,3 +12,9 @@ export interface UserInterface
             ]
         }
 }
+
+export interface User{
+   name: string,
+                     age: number,
+                     phone: string,
+}
