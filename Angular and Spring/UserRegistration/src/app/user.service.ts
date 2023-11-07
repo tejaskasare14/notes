@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { User, UserInterface } from './user';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +13,14 @@ export class UserService {
 
   getAllUsers()
   {
-    return this.httpClient.get<UserInterface>("http://localhost:8080/users")
+    return this.httpClient.get<UserInterface[]>("http://localhost:8080/v1/api/users")
   }
 
-  addNewUser(userdata:any)
+  addNewUser(user :User)
   {
-    this.httpClient.post("http://localhost:8080/users",userdata);
+    console.log(user);
+    const headers = {'Content-Type':'application/json'}  
+    // const body=JSON.stringify(user);
+    return this.httpClient.post("http://localhost:8080/v1/api/users",user,{'headers':headers});
   }
 }

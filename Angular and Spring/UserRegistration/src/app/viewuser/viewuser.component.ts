@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { UserInterface } from '../user';
 
 @Component({
   selector: 'app-viewuser',
@@ -9,10 +10,10 @@ import { UserService } from '../user.service';
 export class ViewuserComponent implements OnInit{
 constructor(private userService:UserService){}
 
-users:any
+users!:UserInterface[]
   ngOnInit(): void {
-    this.userService.getAllUsers().subscribe(value => console.log(value._embedded.users))
-    this.userService.getAllUsers().subscribe(value => this.users=value._embedded.users)
+    //this.userService.getAllUsers().subscribe(value => console.log(value))
+    this.userService.getAllUsers().subscribe(value => this.users=value)
 
   }
 
