@@ -17,4 +17,16 @@ users!:UserInterface[]
 
   }
 
+  deleteUser(id:number)
+  {
+    this.userService.deleteUser(id).subscribe(value=>
+      {
+        console.log(value)
+        if(value==null)
+        {
+          window.location.reload();
+        }
+      })
+    
+  }
 }

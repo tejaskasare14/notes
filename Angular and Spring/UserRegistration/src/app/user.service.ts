@@ -23,4 +23,9 @@ export class UserService {
     // const body=JSON.stringify(user);
     return this.httpClient.post("http://localhost:8080/v1/api/users",user,{'headers':headers});
   }
+
+  deleteUser(id:number)
+  {
+      return this.httpClient.delete(`http://localhost:8080/v1/api/users/${id}`)
+  }
 }

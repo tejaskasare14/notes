@@ -36,10 +36,16 @@ export class AdduserComponent {
     console.log(this.user);
     
 
-    this.userService.addNewUser(this.user).subscribe(data=>console.log(data)
-    )
+    this.userService.addNewUser(this.user).subscribe(data=>
+      {
+        console.log(data)
+        if(data)
+        {
+          this.router.navigate(['/viewuser'])
+        }
+      })
 
-  this.router.navigate(['/viewuser'])
+ 
   }
   
 
