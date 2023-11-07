@@ -4,9 +4,6 @@ export interface UserInterface
    name: string,
    age: number,
    phone: string,
-               
-            
-        
 }
 
 export class User{    

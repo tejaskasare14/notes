@@ -9,10 +9,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './user.service';
 import {HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 const routes:Routes=[
   {path:"adduser",component:AdduserComponent},
-  {path:"viewuser",component:ViewuserComponent}
+  {path:"viewuser",component:ViewuserComponent},
+  {path:"updateuser/:id",component:UpdateuserComponent}
 ]
 
 @NgModule({
@@ -20,7 +22,8 @@ const routes:Routes=[
     AppComponent,
     NavbarComponent,
     AdduserComponent,
-    ViewuserComponent
+    ViewuserComponent,
+    UpdateuserComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes),HttpClientModule,ReactiveFormsModule,FormsModule

@@ -16,6 +16,11 @@ export class UserService {
     return this.httpClient.get<UserInterface[]>("http://localhost:8080/v1/api/users")
   }
 
+  getUserById(id:number)
+  {
+    return this.httpClient.get<UserInterface>(`http://localhost:8080/v1/api/users/${id}`)
+  }
+
   addNewUser(user :User)
   {
     console.log(user);
@@ -28,4 +33,12 @@ export class UserService {
   {
       return this.httpClient.delete(`http://localhost:8080/v1/api/users/${id}`)
   }
+
+  updateUser(id:number, user:User)
+  {
+    const headers = {'Content-Type':'application/json'}  
+    return this.httpClient.put(`http://localhost:8080/v1/api/users/${id}`,user,{'headers':headers})
+  }
+
+  
 }

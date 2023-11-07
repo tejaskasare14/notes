@@ -16,7 +16,7 @@
           <td>{{user.name}}</td>
           <td>{{user.age}}</td>
           <td>{{user.phone}}</td>
-          <td><a class="btn btn-warning btn-sm" href="hello.com">Update</a></td>
+          <td><a class="btn btn-warning btn-sm" [routerLink]="['/updateuser',user.id]">Update</a></td>
           <td><button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">Delete</button></td>
         </tr>
        
