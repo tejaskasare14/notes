@@ -55,7 +55,7 @@ public class UserServices {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		});
 	
-		founded_user.setId(id);
+		user.setId(id);
 		return userRepository.save(user);
 	}
 

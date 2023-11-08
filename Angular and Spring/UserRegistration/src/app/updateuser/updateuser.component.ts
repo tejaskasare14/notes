@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { User, UserInterface } from '../user';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-updateuser',
@@ -10,31 +10,33 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./updateuser.component.css']
 })
 export class UpdateuserComponent implements OnInit{
-
   constructor(
     private activeRoute:ActivatedRoute,
     private userService:UserService,
-    private router:Router
+    private router:Router,
+    private formBuilder:FormBuilder
   ) { }
 
-  user!:UserInterface
-  id:number=0
-
-  user_obj:User = new User()
-
-  userForm = new FormGroup({
-    name : new FormControl(),
-    age:new FormControl(),
-    phone:new FormControl()
+  id= +this.activeRoute.snapshot.paramMap.get('id')!
+  user:User = new User()
+  userForm!:FormGroup;
+  
+  ngOnInit()
+  {
+    
+    this.userForm=this.formBuilder.group({
+      name:[''],
+      age:[''],
+      phone:['']
   })
-  ngOnInit(): void {
-    this.id= +this.activeRoute.snapshot.paramMap.get('id')!
-    console.log(this.id);
 
-    this.userService.getUserById(this.id).subscribe(data => console.log(data))
-    this.userService.getUserById(this.id).subscribe(data => this.user=data)
- 
+
+    //this.userService.getUserById(this.id).subscribe(data => console.log(data))
+    this.userService.getUserById(this.id).subscribe(data => this.userForm.patchValue(data))
+
+
   }
+
 
   submitData()
   {
@@ -42,14 +44,14 @@ export class UpdateuserComponent implements OnInit{
 
     console.log(this.userForm.value);
 
-    this.user_obj.name = this.userForm.value.name
-    this.user_obj.age = this.userForm.value.age
-    this.user_obj.phone = this.userForm.value.phone
+    this.user.name = this.userForm.value.name
+    this.user.age = this.userForm.value.age
+    this.user.phone = this.userForm.value.phone
   
-    console.log(this.user_obj);
+     console.log(this.user);
     
 
-    this.userService.updateUser(this.id,this.user_obj).subscribe(data=>
+    this.userService.updateUser(this.id,this.user).subscribe(data=>
       {
         console.log(data)
         if(data)
@@ -59,5 +61,5 @@ export class UpdateuserComponent implements OnInit{
       })
 
  
-  }
+   }
 }
