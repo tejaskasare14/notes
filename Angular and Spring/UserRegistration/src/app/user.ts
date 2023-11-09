@@ -7,7 +7,7 @@ export interface UserInterface
 }
 
 export class User{    
-   name!: string
-   age!: number
-   phone!: string
+  name!: string
+ age!: number
+   phone!: string  
 }

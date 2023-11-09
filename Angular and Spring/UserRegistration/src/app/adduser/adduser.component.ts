@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../user';
 import { Router } from '@angular/router';
@@ -11,16 +11,29 @@ import { Router } from '@angular/router';
   templateUrl: './adduser.component.html',
   styleUrls: ['./adduser.component.css']
 })
-export class AdduserComponent {
+export class AdduserComponent implements OnInit{
 
   user:User = new User()
-  constructor(private userService:UserService, private router:Router){}
+  userForm!:FormGroup;
+  constructor(private userService:UserService, private router:Router, private formBuilder:FormBuilder){}
+  ngOnInit(): void 
+  {
+    this.userForm=this.formBuilder.group({
+      name:['',[Validators.minLength(3),Validators.maxLength(10),Validators.required]],
+      age:['',[Validators.min(18),Validators.max(30),Validators.required]],
+      phone:['']
+    })
+  }
 
-  userForm = new FormGroup({
-    name : new FormControl(),
-    age:new FormControl(),
-    phone:new FormControl()
-  })
+  get name():FormGroup
+  {
+    return this.userForm.get("name") as FormGroup
+  }
+
+  get age():FormGroup
+  {
+    return this.userForm.get("age") as FormGroup
+  }
 
  
   submitData()
@@ -28,6 +41,9 @@ export class AdduserComponent {
     
 
     console.log(this.userForm.value);
+
+    
+    
 
     this.user.name = this.userForm.value.name
     this.user.age = this.userForm.value.age
