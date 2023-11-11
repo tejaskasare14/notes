@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { User, UserInterface } from '../user';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-updateuser',
@@ -25,16 +25,26 @@ export class UpdateuserComponent implements OnInit{
   {
     
     this.userForm=this.formBuilder.group({
-      name:[''],
-      age:[''],
+      name:['',[Validators.minLength(3),Validators.maxLength(10),Validators.required]],
+      age:['',[Validators.min(18),Validators.max(30),Validators.required]],
       phone:['']
-  })
+    })
+
 
 
     //this.userService.getUserById(this.id).subscribe(data => console.log(data))
     this.userService.getUserById(this.id).subscribe(data => this.userForm.patchValue(data))
 
 
+  }
+  get name():FormGroup
+  {
+    return this.userForm.get("name") as FormGroup
+  }
+
+  get age():FormGroup
+  {
+    return this.userForm.get("age") as FormGroup
   }
 
 

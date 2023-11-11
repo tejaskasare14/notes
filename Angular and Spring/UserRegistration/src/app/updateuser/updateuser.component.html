@@ -3,11 +3,19 @@
       <div class="mb-3">
         <label for="username" class="form-label">Name</label>
         <input type="text" class="form-control" id="username"  name="name"  formControlName="name">
-        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-      </div>
+        <div id="emailHelp" class="form-text text-danger" *ngIf="name.invalid && name.dirty">
+          <span *ngIf="name.errors!['required']">Name is required </span>
+          <span *ngIf="name.errors!['minlength']">Name must have at least 3 characters</span>
+          <span *ngIf="name.errors!['maxlength']">Name must have max 10 characters</span>
+        </div>      </div>
       <div class="mb-3">
         <label for="userage" class="form-label">Age</label>
         <input type="number" class="form-control" id="userage"  name="age"  formControlName="age">
+        <div id="userage" class="form-text text-danger" *ngIf="age.invalid && age.dirty">
+          <span *ngIf="age.errors!['required']">Age is required </span>
+          <span *ngIf="age.errors!['min']">Min age requred is 18</span>
+          <span *ngIf="age.errors!['max']">Max age requred is 30</span>
+        </div>
       </div>
 
       <div class="mb-3">
@@ -15,7 +23,7 @@
          <input type="tel" class="form-control" id="userphone"  name="phone"  formControlName="phone">
        </div>
      
-      <button type="submit" class="btn btn-primary w-100">Update</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="userForm.invalid">Update</button>
     </form>
 </div>
 

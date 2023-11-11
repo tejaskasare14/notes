@@ -10,11 +10,13 @@ import { UserService } from './user.service';
 import {HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { HomeComponent } from './home/home.component';
 
 const routes:Routes=[
-  {path:"",redirectTo:"/viewuser",pathMatch:'full'},
+  {path:"",redirectTo:"/home",pathMatch:'full'},
   {path:"adduser",component:AdduserComponent},
   {path:"viewuser",component:ViewuserComponent},
+  {path:"home",component:HomeComponent},
   {path:"updateuser/:id",component:UpdateuserComponent}
 ]
 
@@ -24,7 +26,8 @@ const routes:Routes=[
     NavbarComponent,
     AdduserComponent,
     ViewuserComponent,
-    UpdateuserComponent
+    UpdateuserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,RouterModule.forRoot(routes),HttpClientModule,ReactiveFormsModule,FormsModule

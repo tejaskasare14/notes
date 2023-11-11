@@ -24,6 +24,6 @@
          <input type="tel" class="form-control" id="userphone" formControlName="phone" name="phone">
        </div>
      
-      <button type="submit" class="btn btn-primary w-100">Submit</button>
+      <button type="submit" class="btn btn-primary w-100" [disabled]="userForm.invalid">Submit</button>
     </form>
 </div>
