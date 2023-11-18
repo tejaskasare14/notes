@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div id="root"></div>
+   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+   <!-- step 1 : add bable cdn to your project -->
+   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+   <script type="text/babel"> // step 2 : add type="text/babel" to consider this as a bable script
+      
+      function Myh1Component ()
+      {
+         return <h1>Hello React</h1>;  //bable will automatically convert this jsx code into react code
+      }
+
+      //if we use function name as small letter
+      /*function button ()
+      {
+         return <h1>Hello React</h1>;  
+      }*/
+  
+      let root = document.getElementById("root")
+
+      let div_container = ReactDOM.createRoot(root)
+      div_container.render(
+         <Myh1Component/> //way to render component if you are using bable
+         // <button/> here you will get one button insted of actual element from above button component
+      )
+   </script>
+</body>
+</html>

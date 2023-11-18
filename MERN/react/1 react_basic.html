@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div id="root"></div>
+   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   <script>
+      // without react add h1 into div
+      //1 create h1
+      //let myh1 = document.createElement("h1")
+      //myh1.textContent = 'hello world'
+
+      //2 get div by its id
+      //let root = document.getElementById("root")
+
+      //3 add h1 into div
+      //root.appendChild(myh1)
+      
+      //1 create h1 using react
+      let my_h1 = React.createElement(
+         'h1',
+         null, //add attribute over here
+         'this is h1 created by using react'
+      )
+      //2 get div by its id
+      let root = document.getElementById("root")
+
+      //3 add h1 into div using react
+      /*
+         ReactDOM.render(
+            my_h1,
+            root
+         ) 
+      */
+
+      //by above code you will get output but if you check on console, you will get error on ReactDOM.render(), because
+      //ReactDOM.render() is no longer avaiable in react 18 and above. if you still want to use ReactDOM.render(), your
+      //react application behaves like it is running on react 17 version
+
+      let div_container = ReactDOM.createRoot(root)
+      div_container.render(my_h1)
+   </script>
+</body>
+</html>

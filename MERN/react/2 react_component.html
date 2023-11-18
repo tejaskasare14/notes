@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div id="root"></div>
+   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   <script>
+      
+      //1 create function based component in react
+      function Myh1Component ()
+      {
+         return React.createElement(
+            'h1',
+            null, //add attribute over here
+            'this is h1 created by using react in function based component'
+         )
+         
+      }
+  
+      //2 get div by its id
+      let root = document.getElementById("root")
+
+      //3 add h1 into div using react
+      let div_container = ReactDOM.createRoot(root)
+      div_container.render(
+         React.createElement(Myh1Component)
+       
+      )
+   </script>
+</body>
+</html>
