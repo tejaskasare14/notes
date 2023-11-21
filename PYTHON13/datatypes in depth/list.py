@@ -157,6 +157,12 @@ print(even_data)
 adding_five = [num+5  for num in data]
 print(adding_five)
 
+#multi dimensional list --> list in list
+data = [10,20,[11,22,33],30,40]
+print(data[1])
+print(data[2])
+print(data[2][1])
+
 
 
 
