@@ -85,3 +85,9 @@ def summ(*data): # here, data will be converted into tuple
 summ(40)
 summ(40,50)
 summ(40,50,60)
+
+
+#mixing of all arguments
+def test(a,b,c,d=0,e=0):
+   print(a,b,c,d,e)
+test(10,20,30,e=90,d=60)
