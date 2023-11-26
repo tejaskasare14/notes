@@ -1,0 +1,25 @@
+npm i -D @babel/core @babel/cli @babel/preset-env @babel/preset-react
+
+npx babel --watch src --out-dir .  --presets=@babel/preset-env,@babel/preset-react
+
+converting jsx(javascript xml) to react using babel
+1. create folder and open in vs code
+2. open vs code terminal and add node by 
+	>npm init -y
+3. add babel dependecies by
+	>npm i -D @babel/core @babel/cli @babel/preset-env @babel/preset-react
+4. create 2 folders in main folder -> src and dist
+5. create test.js in src folder
+	function Myh1Component ()
+      {
+         return <h1>Hello React</h1>;  
+      }
+
+      let root = document.getElementById("root")
+
+      let div_container = ReactDOM.createRoot(root)
+      div_container.render(
+         <Myh1Component/> 
+      )
+6. run following command to convert jsx to react code
+	>npx babel --watch src --out-dir dist  --presets=@babel/preset-env,@babel/preset-react
