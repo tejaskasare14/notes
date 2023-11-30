@@ -1,0 +1,24 @@
+#outer_box
+{
+   display: flex;
+   background-color: aqua;
+   flex-direction: row; 
+   border: 2px solid red;
+   height: 500px;
+   /* align-items: flex-end; */
+   align-items: flex-start;
+   /* justify-content: center; */
+   flex-wrap: nowrap;
+   
+}
+
+.box
+{
+   margin: 10px;
+   height: 100px;
+   width: 100px;
+   border: 1px solid black;
+   font-size: 50px;
+   padding-left: 50px;
+   
+}

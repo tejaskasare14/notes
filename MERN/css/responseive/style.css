@@ -1,0 +1,74 @@
+.container
+{
+   width: 100%;
+}
+
+.fluid_img
+{
+   width: 100%;
+   height: auto;
+}
+
+.subject_img
+{
+   height:50px;
+   width:50px
+}
+
+.course
+{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: row;
+}
+
+.subject
+{
+   display: flex;
+   align-items: center;
+   border: 2px solid black;
+   border-radius: 15px;
+   padding: 1%;
+   flex-direction: column;
+}
+
+@media (min-width:320px) and (max-width:768px) {
+   .course
+   {
+      flex-direction: column;
+      margin-left: 10%;
+      margin-right: 10%;
+   }
+   .subject
+   {
+      width: 100%;
+      margin: 10px;
+   }
+
+   .subject>h1
+   {
+     color: red;
+   }
+   
+}
+
+@media (min-width:768px) and (max-width:992px) {
+   .course
+   {
+      flex-direction: row;
+      margin-left: 5%;
+      margin-right: 5%;
+   }
+   .subject
+   {
+      width: 50%;
+      margin: 10px;
+   }
+
+   .subject>h1
+   {
+     color: blue;
+   }
+   
+}
