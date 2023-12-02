@@ -1,21 +1,11 @@
 import './Card.css'
-const employee=[
-   {
-      "name":"Raj",
-      "phone":"8458963254",
-      "fb_url":"https://www.facebook.com/",
-      "profile_pic":"http://localhost:3000/images/person.jfif"
-   },
-   {
-      "name":"Aniket",
-      "phone":"7856985425",
-      "fb_url":"https://www.facebook.com/",
-      "profile_pic":"http://localhost:3000/images/person.jfif"
-   }
-]
-function Card()
+
+
+function Card(props)
 {
-   let profile = employee[1]
+   // let profile = props.employee_data
+   let profile = props
+   
    return(
       <>
          <div className="card">
@@ -27,7 +17,7 @@ function Card()
                   <a href={profile.fb_url}>Facebook Profile</a>
                </div>
             </div>
-      </div>
+         </div>
       </>
    )
 }
