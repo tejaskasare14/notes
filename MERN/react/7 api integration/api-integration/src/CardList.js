@@ -11,7 +11,6 @@ function CardList(props)
    let end_index = 3
    // let employees = employee.slice(start_index,end_index)
    let [employees,setEmployees]=useState(employee.slice(start_index,end_index))
-
    let previous_page = () =>{
         
          if(page_no>0)
