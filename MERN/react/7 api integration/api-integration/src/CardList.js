@@ -2,7 +2,7 @@ import { useState } from "react"
 import Card from "./Card"
 import employee from './emp-data.json'
 
-function CardList()
+function CardList(props)
 {
    // let page_no = 0
    let [page_no, setPageNumber] = useState(0)
@@ -38,8 +38,7 @@ function CardList()
    return(
       <>
          <p>Current Page {page_no+1}</p>
-         <button onClick={previous_page} disabled={page_no==0 || page_no<0?true:false}>Previous </button>
-         <button onClick={next_page}>Next </button>
+        
          {/* sending data to card using array index */}
          {/* 
          <Card employee_data={employee[0]}/>
@@ -50,12 +49,13 @@ function CardList()
 
          {/* display multiple cards */}
          {
-            employees.map((employee) => 
+            props.employees.map((employee) => 
                {
                   return <Card {...employee} key={employee.id}/>
                })
          }
-        
+         <button onClick={previous_page} disabled={page_no==0 || page_no<0?true:false}>Previous </button>
+         <button onClick={next_page}>Next </button>
       </>
    )
 }
