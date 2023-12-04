@@ -16,3 +16,4 @@
 # from module_name import member1 as alise_member1_name, member2 as alise_member2_name
 
 #__name__ : to check whether the python file is executeded as modele or stand alone program
+# if __name__ == main then file is executed as program otheriwise as a module
