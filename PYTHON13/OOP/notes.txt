@@ -1,0 +1,38 @@
+OOP
+1.class
+   - class is plan or bluprint for an object
+   - class represents the properties and behaviours required for an object
+   - properties : variables , behaviours : functions(methods)
+   - method : when we write function inside a class, it is called as method
+   - class can have 3 types of variables:
+      1.instance variable
+      2.static variable
+      3.local variable
+   - class can have 3 types of methods:
+      1.instance method
+      2.static method
+      3.class method
+   - ex :car
+   - to create class, we have to use class keyword
+   - class name must start with cap letter
+
+2. object   
+   - object is physical existance of a class
+   - ex. honda civic
+
+3. reference variable:
+   - used to access properties and behaviours of an object
+
+self :
+   - self is always ponting to the current object
+   - self is not a keyword. its just a word, you can use anything instead of self
+   - self must be first parameter of a instance method in oop
+   - self must be first parameter of costructor
+
+comstructor :
+   - constructor is an magic method in python
+   - it it called as magic method, because, it get excecutes automatically when object is created
+   - constructor is having fixed name i.e __init__(self)
+   - self must be first parameter of costructor
+   - consteructor is used to intialize instance varibale
+   - if we are not providing any constructor, then python provides its default counstructor
