@@ -1,1 +1,1 @@
-st_name
+im_instance_method

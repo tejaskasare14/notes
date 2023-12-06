@@ -1,4 +1,4 @@
-OOP
+OOP : way of writting a program which includes class, objects, rv, ... etc
 1.class
    - class is plan or bluprint for an object
    - class represents the properties and behaviours required for an object
@@ -29,10 +29,39 @@ self :
    - self must be first parameter of a instance method in oop
    - self must be first parameter of costructor
 
-comstructor :
+constructor :
    - constructor is an magic method in python
    - it it called as magic method, because, it get excecutes automatically when object is created
    - constructor is having fixed name i.e __init__(self)
    - self must be first parameter of costructor
    - consteructor is used to intialize instance varibale
    - if we are not providing any constructor, then python provides its default counstructor
+
+Instance varibale :
+   - varibale whos value changes from object to object called as instance variable
+   - Where to declare,access,update instance variable :
+      - inside a class
+         - in instance method and constructor by using self
+         - instance method's variable get added to the memory only after calling that instance method
+      - outside a class
+         - using reference variable
+
+Static varibale :
+   - varibale whos value same for all  objects are called as static variable
+   - only one copy of static variable is created
+   - Where to declare static variable :
+      - inside a class
+         - inside a class but outside of all method (all 4)
+         - inside class method using cls keyword or class name
+         - all other methods (instance,constructor,static)  using class name
+         - static variables who declared inside a method will be added only after calling thar method
+      - outside a class
+         - using class name
+      - generally to deal with static variables, use class name only (or cls variable inside class method only)
+
+local variable
+   - the variable declared inside a any method without using self,cls, or class name are called as local variable
+   - for temp use
+
+
+
