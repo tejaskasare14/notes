@@ -23,13 +23,13 @@ OOP : way of writting a program which includes class, objects, rv, ... etc
 3. reference variable:
    - used to access properties and behaviours of an object
 
-self :
+4. self :
    - self is always ponting to the current object
    - self is not a keyword. its just a word, you can use anything instead of self
    - self must be first parameter of a instance method in oop
    - self must be first parameter of costructor
 
-constructor :
+5. constructor :
    - constructor is an magic method in python
    - it it called as magic method, because, it get excecutes automatically when object is created
    - constructor is having fixed name i.e __init__(self)
@@ -37,7 +37,7 @@ constructor :
    - consteructor is used to intialize instance varibale
    - if we are not providing any constructor, then python provides its default counstructor
 
-Instance varibale :
+6. Instance varibale :
    - varibale whos value changes from object to object called as instance variable
    - Where to declare,access,update instance variable :
       - inside a class
@@ -46,7 +46,7 @@ Instance varibale :
       - outside a class
          - using reference variable
 
-Static varibale :
+7. Static varibale :
    - varibale whos value same for all  objects are called as static variable
    - only one copy of static variable is created
    - Where to declare static variable :
@@ -59,9 +59,32 @@ Static varibale :
          - using class name
       - generally to deal with static variables, use class name only (or cls variable inside class method only)
 
-local variable
+8. local variable
    - the variable declared inside a any method without using self,cls, or class name are called as local variable
    - for temp use
+
+9. instance method:
+   - to work with instance variable
+   - first parameter must be self
+   - can called with:
+      - inside class using self
+      - outside class using rv
+10. class method  
+   - to work with static variable
+   - declare with @classmethod decorator
+   - first parameter must be cls
+   - can call with :
+      - in class - using class name or cls variable 
+      - outside a class using class name or rv
+11. static method :
+   - this is genral utility method
+   - declare with @staticmethod decorator
+   - can call with :
+      - in class - using class name 
+      - outside a class using class name or rv
+
+
+
 
 
 

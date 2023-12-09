@@ -1,1 +1,1 @@
-im_instance_method
+hello from static_m

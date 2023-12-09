@@ -1,0 +1,17 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iphone 14",
+      "category": "mobile",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, praesentium."
+    },
+    {
+      "id": 2,
+      "name": "samsung note 3",
+      "category": "mobile",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, praesentium."
+    }
+  ],
+  "users": []
+}
