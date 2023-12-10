@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useState } from "react"
 import { Products } from "./Products"
+import { useFetchApi } from "../../hooks/useFetchApi"
+
 
 
 let original_products = []
 export function ProductList()
 {
 
-   let [products,setProducts] = useState([])  
+   // let [products,setProducts] = useState([])  
    let [url, setUrl] = useState("http://localhost:3000/products")
    
    //fetching data without async await patter
@@ -34,17 +36,21 @@ export function ProductList()
    // },[url])
 
    //fetching data using async await and useCallback hook
-   const fetchProducts =useCallback(async()=>  //useCallback work with function reference based on its dependncy
-   {
-      let response=await fetch(url)
-      let data=await response.json()
-      original_products=data
-      setProducts(data)
-   },[url])
+   // const fetchProducts =useCallback(async()=>  //useCallback work with function reference based on its dependncy
+   // {
+   //    let response=await fetch(url)
+   //    let data=await response.json()
+   //    original_products=data
+   //    setProducts(data)
+   // },[url])
 
-   useEffect(()=>{
-      fetchProducts()
-   },[fetchProducts])
+   // useEffect(()=>{
+   //    fetchProducts()
+   // },[fetchProducts])
+
+   //fetching data from usr custom hook
+
+let {data:products,isLoading}=useFetchApi(url)
 
 
    return(
@@ -75,16 +81,23 @@ export function ProductList()
 
                      <input type="radio" className="btn-check" name="btnradio" id="btnradio4" onClick={()=>setUrl("http://localhost:3000/products?category=fridge")}/>
                      <label className="btn btn-outline-primary" htmlFor="btnradio4">Fridge</label>
+
+                     <input type="radio" className="btn-check" name="btnradio" id="btnradio5" onClick={()=>setUrl("http://localhost:3000/products?category=ac")}/>
+                     <label className="btn btn-outline-primary" htmlFor="btnradio5">Ac</label>
                </div>
-               <div className="row">                                                          
+               <div>
+                     {isLoading ? "Loading...":<div className="row">                                                          
                   {
-                     products.map(product => {
+                     products && products.length>0? products && products.map(product => {
                         return (
                               <Products {...product} key={product.id}/>
                         )
-                     })
+                     }): <p>No products with this category</p>
+                     
                   }
+               </div>}
                </div>
+               
          </div>
       </>
    )
