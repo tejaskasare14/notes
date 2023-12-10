@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { Products } from "./Products"
 
 
@@ -9,15 +9,43 @@ export function ProductList()
    let [products,setProducts] = useState([])  
    let [url, setUrl] = useState("http://localhost:3000/products")
    
-   useEffect(()=>{
-      fetch(url)
-      .then(response => response.json())
-      .then(data =>
-         {
-            original_products=data
-            setProducts(data)
-         })
+   //fetching data without async await patter
+   // useEffect(()=>{
+   //    fetch(url)
+   //    .then(response => response.json())
+   //    .then(data =>
+   //       {
+   //          original_products=data
+   //          setProducts(data)
+   //       })
+   // },[url])
+
+   //fetching data using async await pattern
+   // const fetchProducts =async()=>
+   // {
+   //    let response=await fetch(url)
+   //    let data=await response.json()
+   //    original_products=data
+   //    setProducts(data)
+   // }
+
+   // useEffect(()=>{
+   //    fetchProducts()
+   // },[url])
+
+   //fetching data using async await and useCallback hook
+   const fetchProducts =useCallback(async()=>  //useCallback work with function reference based on its dependncy
+   {
+      let response=await fetch(url)
+      let data=await response.json()
+      original_products=data
+      setProducts(data)
    },[url])
+
+   useEffect(()=>{
+      fetchProducts()
+   },[fetchProducts])
+
 
    return(
       <>
@@ -33,20 +61,20 @@ export function ProductList()
                } */}
         
          <div className="container">
-               <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" onClick={()=>setUrl("http://localhost:3000/products")}/>
-                     <label class="btn btn-outline-primary" for="btnradio1">All</label>
+               <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+                     <input type="radio" className="btn-check" name="btnradio" id="btnradio1" onClick={()=>setUrl("http://localhost:3000/products")}/>
+                     <label className="btn btn-outline-primary" htmlFor="btnradio1">All</label>
 
                      <button onClick={()=>setUrl("http://localhost:3000/products")}>All</button>
 
-                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2"  onClick={()=>setUrl("http://localhost:3000/products?category=mobile")}/>
-                     <label class="btn btn-outline-primary" for="btnradio2">Mobile</label>
+                     <input type="radio" className="btn-check" name="btnradio" id="btnradio2"  onClick={()=>setUrl("http://localhost:3000/products?category=mobile")}/>
+                     <label className="btn btn-outline-primary" htmlFor="btnradio2">Mobile</label>
 
-                     <input type="radio" class="btn-check" name="btnradio" id="btnradio3" onClick={()=>setUrl("http://localhost:3000/products?category=tv")}/>
-                     <label class="btn btn-outline-primary" for="btnradio3">TV</label>
+                     <input type="radio" className="btn-check" name="btnradio" id="btnradio3" onClick={()=>setUrl("http://localhost:3000/products?category=tv")}/>
+                     <label className="btn btn-outline-primary" htmlFor="btnradio3">TV</label>
 
-                     <input type="radio" class="btn-check" name="btnradio" id="btnradio4" onClick={()=>setUrl("http://localhost:3000/products?category=fridge")}/>
-                     <label class="btn btn-outline-primary" for="btnradio4">Fridge</label>
+                     <input type="radio" className="btn-check" name="btnradio" id="btnradio4" onClick={()=>setUrl("http://localhost:3000/products?category=fridge")}/>
+                     <label className="btn btn-outline-primary" htmlFor="btnradio4">Fridge</label>
                </div>
                <div className="row">                                                          
                   {
