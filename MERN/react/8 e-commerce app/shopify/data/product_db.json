@@ -4,13 +4,31 @@
       "id": 1,
       "name": "iphone 14",
       "category": "mobile",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, praesentium."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisici.",
+      "image":"https://www.hihonor.com/content/dam/honor/global/blog/2018/compare-honor-mobile-phones-2018/blog-facebook-compare-honor-mobile-phones-2018.jpg"
     },
     {
       "id": 2,
       "name": "samsung note 3",
       "category": "mobile",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, praesentium."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing e",
+      "image":"https://www.hihonor.com/content/dam/honor/global/blog/2018/compare-honor-mobile-phones-2018/blog-facebook-compare-honor-mobile-phones-2018.jpg"
+
+    },
+    {
+      "id": 3,
+      "name": "iphone 14",
+      "category": "mobile",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing",
+      "image":"https://www.hihonor.com/content/dam/honor/global/blog/2018/compare-honor-mobile-phones-2018/blog-facebook-compare-honor-mobile-phones-2018.jpg"
+    },
+    {
+      "id": 4,
+      "name": "samsung note 3",
+      "category": "mobile",
+      "description": "Lorem ipsum dolor sit amet, consectetur ad",
+      "image":"https://www.hihonor.com/content/dam/honor/global/blog/2018/compare-honor-mobile-phones-2018/blog-facebook-compare-honor-mobile-phones-2018.jpg"
+
     }
   ],
   "users": []

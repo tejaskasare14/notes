@@ -20,13 +20,29 @@ export function ProductList()
 
    return(
       <>
-         <p>ProductList</p>                                                        u7fv vcv cvdc
-            {
-               products.map(product => {
-                  return (<Products {...product} key={product.id}/>)
-               })
-               
-            }
+
+         {/* without bootstrap  */}
+         {/* <p>ProductList</p>                                                          
+               {
+                  products.map(product => {
+                     return (
+                           <Products {...product} key={product.id}/>
+                     )
+                  })
+               } */}
+         <p>ProductList</p>
+         <div className="container">
+            <div className="row">                                                          
+               {
+                  products.map(product => {
+                     return (
+                           <Products {...product} key={product.id}/>
+                     )
+                  })
+               }
+
+            </div>
+         </div>
       </>
    )
 }
