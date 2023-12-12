@@ -22,13 +22,13 @@ OOP : way of writting a program which includes class, objects, rv, ... etc
 
 3. reference variable:
    - used to access properties and behaviours of an object
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 4. self :
    - self is always ponting to the current object
    - self is not a keyword. its just a word, you can use anything instead of self
    - self must be first parameter of a instance method in oop
    - self must be first parameter of costructor
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 5. constructor :
    - constructor is an magic method in python
    - it it called as magic method, because, it get excecutes automatically when object is created
@@ -36,7 +36,7 @@ OOP : way of writting a program which includes class, objects, rv, ... etc
    - self must be first parameter of costructor
    - consteructor is used to intialize instance varibale
    - if we are not providing any constructor, then python provides its default counstructor
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 6. Instance varibale :
    - varibale whos value changes from object to object called as instance variable
    - Where to declare,access,update instance variable :
@@ -62,7 +62,7 @@ OOP : way of writting a program which includes class, objects, rv, ... etc
 8. local variable
    - the variable declared inside a any method without using self,cls, or class name are called as local variable
    - for temp use
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 9. instance method:
    - to work with instance variable
    - first parameter must be self
@@ -82,6 +82,47 @@ OOP : way of writting a program which includes class, objects, rv, ... etc
    - can call with :
       - in class - using class name 
       - outside a class using class name or rv
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Problem : to access members of one class into another
+solution : those classes must be in relationship
+         1. IS-A relationship
+         2. HAS-A relationship
+
+HAS-A relationship:
+   - use when we want access only required members of one class to another
+   - achived by creating object of one class in another
+
+IS-A relationship : 
+   -use when we want to access all members of one class in another class
+   -achived by creating parent-child relationship
+   -this relationship is also called as INHERITANCE
+
+Types of INHERITANCE :
+1. single
+   - one parent and one child
+2. multilevel
+   -The multi-level inheritance includes the involvement of at least two or more than two classes. 
+   -out of which one class is inheriting members from another class and this inherited class may be parent for another class
+3. multiple
+   - one child with multiple parent class
+4. hierarchical
+5. hybrid
+--------------------------------------------------------------------------------------------
+polymorphism :
+   - one entity with muitple forms
+   - has 2 types  
+      1. static/compile time polymorphism
+         -checked at compile
+         -method overloading
+            -multiple methods with same name in one class
+            -not supported in python , because python is dynamically typed programing lang
+      2. dynamic/run time polymorphism
+         -checked at run time
+         -method overridding
+            -when parent and child has methods with same name with same number of arguments
+            -supported in python
+            -why we need method overriding
+
 
 
 
