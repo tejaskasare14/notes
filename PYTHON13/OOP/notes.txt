@@ -116,12 +116,43 @@ polymorphism :
          -method overloading
             -multiple methods with same name in one class
             -not supported in python , because python is dynamically typed programing lang
+            -if we are writting method with same name but with diff parameters, still overloading is not suported
       2. dynamic/run time polymorphism
          -checked at run time
          -method overridding
             -when parent and child has methods with same name with same number of arguments
             -supported in python
             -why we need method overriding
+               1. when child is not happy with parents implementation (re-imlemetation)
+               2. when parent has some partial implementation
+            - super() is used when child wants to access members of parent having same name
+------------------------------------------------------------------------------------------------------
+Encapsulation:
+   - data hiding 
+   - by making members (properties and behaviours) private or protected
+   - private : use double underscore
+      - can be accessed only inside same class
+   - protected : use single underscore
+      - can be accessed in same class as well as derived class (child class)
+-------------------------------------------------------------------------------------------
+Abstraction:
+   - means partial implementation
+   - method or class can be abstract
+   - abstract method
+      - method with no imlemetation 
+      - this method must be in abstract class
+      - we cant create abstract method in non abstract class
+      - abstract method must have @abstractmethod decorator
+         -@abstractmethod decorator is present inside abc module
+   - abstract class
+      - if there is abstract method in a class, then only the class must be abstract class
+      - abstract class must be child of ABC class (ABC - Abstract Base Class)
+      - abstract class must contain at least on eabstract method and must be child of ABC
+         - ABC class present inside abc module
+      - we cant create object of abstract class (why?)
+      - abstract class can have non abstract method (concrete methods - methods with body)
+      - child class has to implememnt abstract class's abatrsct methods
+         - if child class is not providing implementation for its parents abstract methods then that child class is also treated as abstract class
 
 
 
