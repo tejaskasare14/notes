@@ -1,0 +1,12 @@
+Error :
+   - 
+
+
+Important conclusions:
+   - there must be atleast one except block if there is try block
+   - if excption raised at any line(even in any block), then the code after that line will not execute
+   - we can write multiple except block for one try block
+   - when any excption raised, python creates its object and find its coresponding class in Except block
+     if class found, then program will terminate/excecutes normally otherwise abnormally
+   - if there is not except block for perticular exception (not even default except) then program will
+     be terminate abmormally
