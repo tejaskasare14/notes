@@ -9,12 +9,15 @@ create database students;
 show databases;
 
 -- to drop/delete database
+-- drop database database_name;
 drop database students;
 
 -- create students database 
+-- create database database_name;
 create database students;
 
 -- to select database for creating table
+-- use database_name;
 use students;
 
 -- creating table inside students database
@@ -24,10 +27,12 @@ create table student(name varchar(10),age int);
 -- to check all tables in selected database (students)
 show tables;
 
--- checking structure of newly created table
+-- checking structure of newly created tablec
+-- describe table_name;
 describe student;
 
 -- to drop/deleting table
+-- drop table table_name;
 drop table student;
 
 -- inserting record into table
@@ -37,6 +42,7 @@ insert into student(name,age) values("raj", 30);
 -- to check all data inside table
 -- select * from table_name
 select * from student;
+
 
 
 
