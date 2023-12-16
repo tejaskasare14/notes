@@ -27,16 +27,6 @@
       "category": "fridge",
       "description": "Lorem ipsum dolor sit amet, consectetur ad",
       "image": "https://www.hihonor.com/content/dam/honor/global/blog/2018/compare-honor-mobile-phones-2018/blog-facebook-compare-honor-mobile-phones-2018.jpg"
-    },
-    {
-      "id": "456",
-      "name": "samsung note 3",
-      "age": "not found"
-    },
-    {
-      "id": "hello",
-      "name": "samsung note 3",
-      "age": "not found"
     }
   ],
   "users": []

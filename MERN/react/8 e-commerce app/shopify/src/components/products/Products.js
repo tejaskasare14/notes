@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 export function Products(props)
@@ -21,7 +22,7 @@ export function Products(props)
                            <h5 className="card-title">{product.name}</h5>
                            <p className="card-text">Description : {product.description}</p>
                            <p className="card-text">Category : {product.category}</p>
-                           <a href="#" className="btn btn-primary">Go somewhere</a>
+                           <Link to={`/products/${product.id}`} className="btn btn-primary">View Product</Link>
                         </div>
                      </div>
                </div>
