@@ -49,10 +49,31 @@ insert into book(book_name,author_name,price,genre,available_in)values("tejas k"
 
 -- not adding book_name (voilating not null constraint)
 -- correct way
--- not passing value to column means not specifing column name
+-- not passing value to column means not specifing column name neither passignits value
 insert into book(author_name,price,genre,available_in)values("tejas k",250,'comedy','online,offline');
 -- Error Code: 1364. Field 'book_name' doesn't have a default value
 -- IMPORTANT : if there is NOT NULL cnstraint on any column then either specify default value or pass value
+
+
+-- not passing  author_name (checking working of default constraint)
+insert into book(book_name,price,genre,available_in)values("java",350,'horror','online,offline');
+select * from book;
+
+-- paasing value not in range of check constraint (voileting check constraint)
+insert into book(book_name,author_name,price,genre,available_in)values("python","tejas k",50,'horror','online,offline');
+-- Error Code: 3819. Check constraint 'book_chk_1' is violated.
+
+--  passing value not specified in enum (voileting enum constraint)
+insert into book(book_name,author_name,price,genre,available_in)values("python","tejas k",650,'adventure','online,offline');
+-- Error Code: 1265. Data truncated for column 'genre' at row 1
+
+--  passing value not specified in set (voileting set constraint)
+insert into book(book_name,author_name,price,genre,available_in)values("python","tejas k",650,'comedy','online,video');
+-- Error Code: 1265. Data truncated for column 'available_in' at row 1
+
+
+
+
 
 
 
