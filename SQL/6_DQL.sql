@@ -82,6 +82,47 @@ select * from employee where per_day between 500 and 2500;
 -- show employees who are not getting per_day in range 500-2500
 select * from employee where per_day not between 500 and 2500;
 
+-- SELECT WITH LIKE
+-- % means any characher with any number
+-- show me employees whos name starts with 'r'
+select * from employee where name like 'r%';
+-- show me employees whos name starts with 'ra'
+select * from employee where name like 'ra%';
+-- show me employees whos name ends with 't'
+select * from employee where name like '%t';
+-- show me employees whos name ends with 'et'
+select * from employee where name like '%et';
+-- when we want to specify number of characters (not characters) then use _
+select * from employee where name like 'r_j';
+-- exactly 4 characters before 't'
+select * from employee where name like '____t';
+-- exactly 5 characters before 't'
+select * from employee where name like '_____t';
+-- name must have 'a' as second character
+select * from employee where name like '_a%';
+
+-- SELECT WITH LIMIT
+-- below query will return only top 2 recods
+select * from employee limit 2;
+select * from employee where name like 'r%' limit 1;
+
+-- SELECT WITH ORDER BY (defaulr oeder is ascending)
+-- sort employees based on per_day ascending order
+select * from employee order by per_day;
+-- sort employees based on per_day descending order
+select * from employee order by per_day desc;
+-- sort employees based on name ascending order
+select * from employee order by name;
+-- order by with where condition
+select * from employee where total_leaves>2 order by total_leaves;
+
+
+-- SELECT WITH IS NULL
+select * from employee where bonus is null;
+select * from employee where bonus is not null;
+
+
+
 
 
 
