@@ -3,14 +3,16 @@ export default function Form() {
   let [formData,setFormData]=useState({
     username:'',
     useremail:'',
-    usercourse:'java'
+    usercourse:'java',
+    usergender:'',
+    useragreement:false
   })
    const captureForm=(event)=>
    {
       // setFormData(event.target.value)
       setFormData({
         ...formData,
-        [event.target.name]:event.target.value
+        [event.target.name]:event.target.type ==="checkbox"?event.target.checked:event.target.value
       })
    }
    const submitForm = (event) =>
@@ -34,6 +36,15 @@ export default function Form() {
             <option value="python">Python</option>
             <option value="ds">Data Science</option>
           </select> <br /><br />
+
+          <label htmlFor="usergender">Gender:</label>
+          <input type="radio" id="usergender" value='m' name="usergender" onChange={captureForm}/>Male
+          <input type="radio" id="usergender" value='f' name="usergender" onChange={captureForm}/>Female <br /><br />
+
+          <input type="checkbox" id="useragreement" checked={formData.useragreement} name="useragreement" onChange={captureForm}/>
+          Agree terms and conditions
+          
+
          
          <input type="submit" />
 
