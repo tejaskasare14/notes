@@ -1,0 +1,124 @@
+{
+   "pets": [
+      {
+         "id": 1,
+         "pet_name": "Allayne",
+         "pet_type": "dog",
+         "price": 2841,
+         "breed": "Bulldog",
+         "age": 10,
+         "color": "black",
+         "weight": 61.4,
+         "birthdate": "9/12/2008",
+         "image": "http://dummyimage.com/200x200.png/dddddd/000000"
+      },
+      {
+         "id": 2,
+         "pet_name": "Base",
+         "pet_type": "bird",
+         "price": 62696,
+         "breed": "Poodle",
+         "age": 2,
+         "color": "brown",
+         "weight": 76.6,
+         "birthdate": "4/5/2004",
+         "image": "http://dummyimage.com/200x200.png/ff4444/ffffff"
+      },
+      {
+         "id": 3,
+         "pet_name": "Sile",
+         "pet_type": "dog",
+         "price": 14308,
+         "breed": "Poodle",
+         "age": 3,
+         "color": "brown",
+         "weight": 14.1,
+         "birthdate": "2/20/2018",
+         "image": "http://dummyimage.com/200x200.png/dddddd/000000"
+      },
+      {
+         "id": 4,
+         "pet_name": "Haley",
+         "pet_type": "cat",
+         "price": 4675,
+         "breed": "Poodle",
+         "age": 7,
+         "color": "black",
+         "weight": 46.9,
+         "birthdate": "9/4/2014",
+         "image": "http://dummyimage.com/200x200.png/ff4444/ffffff"
+      },
+      {
+         "id": 5,
+         "pet_name": "Baillie",
+         "pet_type": "bird",
+         "price": 62561,
+         "breed": "Labrador Retriever",
+         "age": 14,
+         "color": "black",
+         "weight": 19.4,
+         "birthdate": "7/18/2004",
+         "image": "http://dummyimage.com/200x200.png/cc0000/ffffff"
+      },
+      {
+         "id": 6,
+         "pet_name": "Urbain",
+         "pet_type": "cat",
+         "price": 63851,
+         "breed": "Labrador Retriever",
+         "age": 18,
+         "color": "white",
+         "weight": 44.9,
+         "birthdate": "6/28/2019",
+         "image": "http://dummyimage.com/200x200.png/5fa2dd/ffffff"
+      },
+      {
+         "id": 7,
+         "pet_name": "Rhona",
+         "pet_type": "dog",
+         "price": 23142,
+         "breed": "Golden Retriever",
+         "age": 2,
+         "color": "black",
+         "weight": 88.5,
+         "birthdate": "4/20/2013",
+         "image": "http://dummyimage.com/200x200.png/dddddd/000000"
+      },
+      {
+         "id": 8,
+         "pet_name": "Aurlie",
+         "pet_type": "cat",
+         "price": 94364,
+         "breed": "Golden Retriever",
+         "age": 6,
+         "color": "brown",
+         "weight": 4.3,
+         "birthdate": "9/22/2021",
+         "image": "http://dummyimage.com/200x200.png/ff4444/ffffff"
+      },
+      {
+         "id": 9,
+         "pet_name": "Shelli",
+         "pet_type": "cat",
+         "price": 78687,
+         "breed": "Labrador Retriever",
+         "age": 17,
+         "color": "black",
+         "weight": 28.5,
+         "birthdate": "12/20/2002",
+         "image": "http://dummyimage.com/200x200.png/cc0000/ffffff"
+      },
+      {
+         "id": 10,
+         "pet_name": "Norina",
+         "pet_type": "bird",
+         "price": 24621,
+         "breed": "Poodle",
+         "age": 11,
+         "color": "brown",
+         "weight": 7.5,
+         "birthdate": "5/5/2013",
+         "image": "http://dummyimage.com/200x200.png/5fa2dd/ffffff"
+      }
+   ]
+}
