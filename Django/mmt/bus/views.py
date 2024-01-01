@@ -4,4 +4,5 @@ from django.http import HttpResponse
 # Create your views here.
 def bus(request):
    msg = "<h1> welocome to MMT bus </h1>"
-   return HttpResponse(msg)
+   # return HttpResponse(msg)
+   return render(request,'bus/index.html')
