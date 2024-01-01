@@ -5,4 +5,5 @@ from django.http import HttpResponse
 def hotels(request):
    msg = "<h1> welocome to MMT hotels </h1>"
    # return HttpResponse(msg)
-   return render(request,'hotels/index.html')
+   hotel_info = {"name":"Hotel Blue Town", "city":"Thane"}
+   return render(request,'hotels/index.html',context=hotel_info)
