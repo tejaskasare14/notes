@@ -48,6 +48,11 @@ select max(salary) from employee;
 select greatest(20,30,10,50);
 select avg(salary) as avg_sal from employee;
 select sum(salary) from employee;
+select * from employee;
+select count(*) from employee;
+select if(10<5,"yes it is","no");
+select fname, if(salary>25000,"yes","no") from employee;
+
 
 select * from employee where salary =(select min(salary) from employee);
 select * from employee where salary = 45000;
@@ -98,7 +103,20 @@ select last_day(curdate());
 
 select datediff('2024-01-31','2024-01-01');
 select datediff('2024-02-14','2024-01-01');
-select datediff(last_day(curdate()),curdate())
+select datediff(last_day(curdate()),curdate());
+
+select date_format('2024-01-31','%Y'); -- year in 4 digit
+select date_format('2024-01-31','%y'); -- year in 2 digit
+select date_format('2024-01-31','%M'); -- complete month name
+select date_format('2024-01-31','%b'); -- month name in 3 letters
+select date_format('2024-01-31','%m'); -- month in digit
+select date_format('2024-01-31','%D'); -- day with sufficks like 1st,2nd
+select date_format('2024-01-31','%d'); -- day with number
+select date_format('2024-01-31','%W'); -- week day name
+select date_format('2024-01-31','%a'); -- week name with 3 letters
+select date_format('2024-01-31','%w'); -- week day number
+select date_format('2024-01-31','%d/%M/%Y'); -- date formatting
+select date_format('2024-01-31','%d-%M-%Y');
 
 
 

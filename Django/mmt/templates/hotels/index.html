@@ -1,11 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="{% static 'css/hotel_css.css' %}">
    <title>Document</title>
 </head>
 <body>
+   <img src="{% static 'images/gold_fish.png' %}" alt="" height="200" width="200">
    <h1>This code is runing from hotels template file</h1>
    <h2>Hotel Name : {{name}}</h2>
    <h2>Hotel city : {{city}}</h2>
