@@ -2,7 +2,6 @@ from django.shortcuts import render
 from movie.models import Movies
 
 # Create your views here.
-
 def show_movies(request):
    result = Movies.objects.all()
    # for movie in result:
