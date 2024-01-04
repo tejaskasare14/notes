@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Welome to BookMyShow</h1>
+   {% if movie_list %}
+   <p>following movies found</p>
+   <table border="1" cellspacing="0" cellpadding="10" align="center">
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th>MOVIE NAME</th>
+            <th>RELEASE DATE</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for movie in movie_list %}
+         <tr>
+            <td>{{movie.id }}</td>
+            <td>{{movie.movie_name}}</td>
+            <td>{{movie.release_date}}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   {% else %}
+   <p>No movies found</p>
+   {% endif %}
+</body>
+</html>
