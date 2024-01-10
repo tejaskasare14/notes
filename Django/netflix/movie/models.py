@@ -16,3 +16,6 @@ class MovieTable(models.Model):
    ('english', 'English'))
    language = models.CharField(choices=LANGUAGE_CHOICES,max_length=15)
    
+   def __str__(self):
+      return "movie "+ self.name +" added to table"
+   
