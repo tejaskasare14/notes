@@ -7,9 +7,20 @@ import moon from '../moon.svg'
 
 export default function FormValidationUsingRHF() {
 
+      // while using context
+      // const {theme,setTheme}=useTheme()
+      // console.log(theme);
 
-      const {theme,setTheme}=useTheme()
-      console.log(theme);
+      // using reducer with our own hook
+      // const {theme,changeTheme}=useTheme()
+      // console.log(theme);
+
+      // using reducer without our own hook (useTheme())
+      const context=useContext(ThemeContext)
+      const {theme,changeTheme} = context
+
+
+      
 
    let themeStyle = {}
 
@@ -49,10 +60,16 @@ export default function FormValidationUsingRHF() {
             {/* <p>Data {JSON.stringify(formData)}</p> */}
 
          </form>
-         {
+         {/* {
             theme=='light'? 
             <img src={moon} width={25} onClick={() => setTheme('dark')}/> : 
             <img src={sun} width={25} onClick={() => setTheme('light')}/>
+         } */}
+
+         {
+            theme=='light'? 
+            <img src={moon} width={25} onClick={() => changeTheme('dark')}/> : 
+            <img src={sun} width={25} onClick={() => changeTheme('light')}/>
          }
       </div>
    )
