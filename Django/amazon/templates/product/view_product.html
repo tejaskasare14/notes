@@ -15,6 +15,7 @@
          <th>ID</th>
          <th>NAME</th>
          <th>PRICE</th>
+         <th colspan="2">ACTION</th>
       </tr>
    </thead>
    <tbody>
@@ -23,6 +24,10 @@
          <td>{{product.id}}</td>
          <td>{{product.name}}</td>
          <td>{{product.price}}</td>
+         <td>
+            <a href="/product/update/{{product.id}}"><button>Update</button></a>
+            <a href="/product/delete/{{product.id}}"><button>Delete</button></a>
+         </td>
       </tr>
       {% endfor %}
    </tbody>

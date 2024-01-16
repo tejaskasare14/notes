@@ -18,3 +18,20 @@ def add_product(request):
       if (form_data.is_valid()):
          form_data.save(commit=True)
          return redirect('/product/view')
+      
+def delete_product(request,productid):
+   product=Product.objects.get(id=productid)
+   product.delete()
+   return redirect('/product/view')
+
+def update_product(request,productid):
+   product=Product.objects.get(id=productid)
+   data = {'product':product}
+   if(request.method=='POST'):
+      print("hei")
+      form_data = ProductForm(request.POST,instance=product)
+      print(form_data)
+      if (form_data.is_valid()):
+         form_data.save(commit=True)
+         return redirect('/product/view')
+   return render(request,'product/update_product.html',context=data)
