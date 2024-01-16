@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+  <h1>Follwoing PProduct Found</h1>
+  <a href="/product/add"><button>Add New product</button></a>
+  {% if products %}
+  <table align='center' cellpadding='10px' cellspacing='0px' border=1>
+   <thead >
+      <tr>
+         <th>ID</th>
+         <th>NAME</th>
+         <th>PRICE</th>
+      </tr>
+   </thead>
+   <tbody>
+      {% for product in products %}
+      <tr>
+         <td>{{product.id}}</td>
+         <td>{{product.name}}</td>
+         <td>{{product.price}}</td>
+      </tr>
+      {% endfor %}
+   </tbody>
+  </table>
+  {% else %}
+  <p>The are no products found, please add some</p>
+  {% endif %}
+</body>
+</html>
