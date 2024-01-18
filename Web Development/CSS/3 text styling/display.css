@@ -1,0 +1,9 @@
+div>p{color: red;}
+
+div>span{color: red;}
+
+#para1{display: none;}
+
+#para2{display: inline;}
+
+#para3{display: block;}

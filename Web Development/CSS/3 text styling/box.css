@@ -1,0 +1,12 @@
+#box1
+{
+   height: 200px;
+   width: 200px;
+   border: 2px solid black;
+   /* border-radius: 20px; */  /* to make rounded corner*/
+   border-radius: 100px; /* to make circle*/
+   background-color: aqua;
+   background-image: url('man.jpg');
+   background-repeat: no-repeat;
+   box-shadow: 3px 5px 10px gray;
+}

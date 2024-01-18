@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Employee Data</h1>
+   
+   <table align="center" border="1" cellspacing="0" cellpadding="10">
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>CITY</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for employee in employees %}
+         <tr>
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.city}}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   
+</body>
+</html>

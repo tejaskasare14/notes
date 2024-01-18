@@ -1,0 +1,28 @@
+in css , selectors are used to specify on which 
+element we want to apply style
+
+syntax for css -
+      selector 
+      {
+         property:value;
+      }
+
+      h1 
+      {
+         color:red;
+      }
+
+type of selectors:
+- tag selector
+   when we want to apply style for specific tag, use tag selector
+- id selector
+   when there are same tags but we want to apply different styles
+   to differntiate those same tag, use id attribute
+   ex :
+      <h1 id="in_green">Tejas</h1>
+      #in_green{color: green;}
+- class selector
+   when there are alredy different tags but we want to apply same style - class selecor
+   use class attribute
+- group selector
+   when there is alredy id,class,tag present inside our html and we want to apply same style for them

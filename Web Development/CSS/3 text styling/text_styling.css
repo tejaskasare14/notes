@@ -1,0 +1,30 @@
+#my_name
+{
+   font-family: 'Play', sans-serif;
+   font-size: 100px;
+   font-weight: bold;
+
+   color: red;
+   background-color: aquamarine;
+
+   text-align: center;
+   /* text-decoration: underline; */
+   text-transform: capitalize;
+   text-shadow: 3px 5px 5px grey;
+}
+
+#box
+{
+   height: 100px;
+   width: 200px;
+   border: 2px solid black;
+   text-align: justify;
+   padding: 10px;
+}
+
+#spacing{
+   word-spacing: 10px;
+   letter-spacing: 3px;
+   text-indent: 100px;
+   line-height: 2;
+}
