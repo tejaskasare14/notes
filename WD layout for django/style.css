@@ -1,0 +1,50 @@
+#container
+{
+   width: 100%;
+   background-color: aqua;
+}
+
+#filter_area
+{
+   width: 30%;
+}
+
+#product_area
+{
+   width: 70%;
+}
+
+#card
+{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+#card #card-items
+{
+   border: 1px solid black;
+   padding: 10px;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 10px;
+   width: 20%;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 3px 5px 5px grey;
+}
+
+#card #card-items  img
+{
+   border: 2px solid black;
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+   padding: 5px;
+}
+
+#card #card-items #card-text
+{
+   margin-left: 10px;
+}

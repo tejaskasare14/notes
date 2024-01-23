@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 
 #importing autheticate function to login user
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 def register_user(request):
    data={}
@@ -47,6 +47,7 @@ def login_user(request):
          user=authenticate(username=uname,password=upass)
          print(user)
          if user is not None:
+            login(request,user)
             return redirect('/myapp/home')
          else:
             data['error_msg']='Wrong Password'
@@ -54,4 +55,24 @@ def login_user(request):
    return render(request,'myapp/login.html')
 
 def home(request):
-   return render(request,'myapp/home.html')
+   data = {}
+   #checking whether user is authenticated user
+   user_authenticated=request.user.is_authenticated
+   print(user_authenticated)
+   #if authenticated, then show home else go to login page
+   if(user_authenticated):
+      user_id = request.user.id 
+      user=User.objects.get(id=user_id)
+      # print(user_id)
+      data['user_data'] = user.username
+      return render(request,'myapp/home.html',context=data)
+   else:
+      #control came here because user is not logged in
+      # so you can redirect to login page
+      data['user_data'] = "User"
+      return render(request,'myapp/home.html',context=data)
+   
+def user_logout(request):
+   logout(request)
+   return render(request,'myapp/home.html',{'user_data':"User"})
+         
