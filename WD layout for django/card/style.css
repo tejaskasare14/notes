@@ -1,16 +1,39 @@
-/* .product_area
+
+.container
 {
    width: 100%;
    display: flex;
    flex-direction: row;
-} */
+}
+
+.filter_area
+{
+   width: 20%;
+   display: flex;
+   /* background-color: aqua; */
+   border: 1px dashed black;
+   flex-direction: column;
+   padding: 10px;
+   
+}
+
+.product_area
+{
+   width: 80%;
+   display: flex;
+   margin-left: 2px;
+   /* border: 1px dashed black; */
+   flex-wrap: wrap;
+
+}
 
 
 .card
 {
-   width: 100%;
    display: flex;
    flex-direction: column;
+   width: 25%;
+   
 }
 
 .card .card-items
@@ -20,8 +43,7 @@
    border-radius: 10px;
    display: flex;
    flex-direction: column;
-   margin-bottom: 10px;
-   width: 15%;
+   margin: 10px;
    align-items: center;
    justify-content: center;
    box-shadow: 3px 5px 5px grey;
@@ -29,10 +51,9 @@
 
 .card .card-items  img
 {
-   /* border: 1px solid black; */
    border-radius: 5%;
-   height: 200px;
-   width: 200px;
+   height: 150px;
+   width: 150px;
    padding: 5px;
 }
 
