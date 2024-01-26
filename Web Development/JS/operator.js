@@ -57,6 +57,21 @@ console.log(5==="5");
 //condition?msg if condition is true:msg if condition is false
 console.log(10>50?"yes it is":"no it in not");
 
+//Logical
+// &&,||, !
+console.log(10>5 && 10>6);
+console.log(10<5 && 10>6);
+console.log(10>5 && 10<6);
+console.log(10<5 && 10<6);
+
+console.log(10>5 || 10>6);
+console.log(10<5 || 10>6);
+console.log(10>5 || 10<6);
+console.log(10<5 || 10<6);
+
+console.log(!10>5);
+console.log(!10<5);
+
 
 
 

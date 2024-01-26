@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %}
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+</head>
+<body>
+   <div class="navbar"></div>
+   <div class="container">
+      <div class="filter_area">
+         <div class="by_category">
+            <h2>Filter By Categoty</h2>
+            <ul>
+               <li><a href="/product/index">All</a></li>
+               <li><a href="/product/filter/1">By Mobile</a></li>
+               <li><a href="/product/filter/2">By Clothes</a></li>
+               <li><a href="/product/filter/3">By Shoes</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>
+         <div class="by_price">
+            <h2>Filter By Price</h2>
+            <form action="/product/price">
+               <label for="">Min:</label>
+               <input type="number" name="min"> <br><br>
+               <label for="">Max:</label>
+               <input type="number" name="max"> <br><br>
+               <input type="submit">
+            </form>
+         </div>
+<div>------------------------------------------------</div>
+         <div class="sort_by_price">
+            <h2>Sort By Price</h2>
+            <ul>
+               <li><a href="/product/sort/desc">High to Low</a></li>
+               <li><a href="/product/sort/asc">Low to High</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>    
+         <div class="by_rating">
+            <h2>Sort By Rating</h2>
+            <ul>
+               <li><a href="/product/rating/3">3 and above</a></li>
+               <li><a href="/product/rating/4">4 and above</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>        
+      </div>
+      <div class="product_area">
+         {% for product in products %}
+         <div class="card">
+            <div class="card-items">
+               <img src="{% static 'images/shirt.webp' %}" alt="">
+               <div class="card-text">
+                  <p>{{product.name|upper}}</p>
+                  <p>{{product.price}}</p>
+                  <p>{{product.rating}}</p>
+                  <button id="add_to_cart_btn"><a href="">Add to Cart</a></button>
+                  <button id="buy_now_btn"><a href="">View More</a></button>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</body>
+</html>

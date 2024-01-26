@@ -9,6 +9,7 @@ class ProductTable(models.Model):
    category = models.IntegerField(choices=CATEGORIES)
    is_active= models.BooleanField()
    rating = models.FloatField() 
+   image=models.ImageField(upload_to='image')
    
    def __str__(self) :
       return self.name + " added to table"
