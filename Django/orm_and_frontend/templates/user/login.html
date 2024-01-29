@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <table align="center" border="1" cellpadding="5" cellspacing="5">
+      <form method="POST">
+         {% csrf_token %}
+      <thead>
+         <tr>
+            <th colspan="2">
+               Login Form
+               {% if error_msg %}
+               <p style="color: red; font-weight: lighter;">{{error_msg}}</p>
+               {% endif %}
+            </th>     
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td><label for="username">UserName</label></td>
+            <td><input type="text" id="username" name="username" value=""></td>
+         </tr>
+         <tr>
+            <td><label for="password">Password</label></td>
+            <td><input type="password" id="password" name="password" value=""></td>
+         </tr>
+         <tr>
+            <td><input type="reset"></td>
+            <td><input type="submit"></td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <p align="center">New User? Click <a href="/user/register">here</a> to Register</p>
+            </td>
+         </tr>
+      </tbody>
+   </form>
+   </table>
+</body>
+</html>

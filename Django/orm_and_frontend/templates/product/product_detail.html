@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %}
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+</head>
+<body>
+   <div class="card">
+      <div class="card-items">
+         <!-- <img src="{% static 'images/shirt.webp' %}" alt=""> -->
+         <img src="http://127.0.0.1:8000/product/media/{{product.image}}" alt="">
+         <div class="card-text">
+            <p>{{product.name|upper}}</p>
+            <p>{{product.details}}</p>
+            <p>{{product.price}}</p>
+            <p>{{product.rating}}</p>
+            {% if product.category == 1 %}
+            <p>Mobile</p>
+            {% elif product.category == 2 %}
+            <p>Clothes</p>
+            {% else %}
+            <p>Shoes</p>
+            {% endif %}
+            <button id="add_to_cart_btn"><a href="">Add to Cart</a></button>
+            <button id="buy_now_btn"><a href="">Buy Now</a></button>
+         </div>
+      </div>
+   </div>
+</body></html>

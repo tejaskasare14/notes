@@ -6,9 +6,46 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
    <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+   <style>
+      header {
+         width: 100%;
+         height: 50px;
+         background-color: orange;
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         }
+         header * {
+         display: inline;
+         }
+         header li {
+         margin: 20px;
+         }
+         header li a {
+         color: blue;
+         text-decoration: none;
+         }
+   </style>
 </head>
 <body>
-   <div class="navbar"></div>
+   <div class="navbar">
+      <header>
+         <nav>
+            <ul>
+               <li>   <a href="/product/index">Home</a>     </li>
+               <li>   <a href="/product/index">Product</a>  </li>
+   
+               {% if user.is_authenticated %}
+                  <li>   <a href="/user/logout">Logout</a>   </li>
+               {% else %}
+                  <li>   <a href="/user/login">Login</a>    </li>
+                  <li>   <a href="/user/register">Register</a> </li>
+               {% endif %}
+               
+            </ul>
+         </nav>
+         </header> 
+   </div>
    <div class="container">
       <div class="filter_area">
          <div class="by_category">
@@ -53,13 +90,14 @@
          {% for product in products %}
          <div class="card">
             <div class="card-items">
-               <img src="{% static 'images/shirt.webp' %}" alt="">
+               <!-- <img src="{% static 'images/shirt.webp' %}" alt=""> -->
+               <img src="http://127.0.0.1:8000/product/media/{{product.image}}" alt="">
                <div class="card-text">
                   <p>{{product.name|upper}}</p>
                   <p>{{product.price}}</p>
                   <p>{{product.rating}}</p>
                   <button id="add_to_cart_btn"><a href="">Add to Cart</a></button>
-                  <button id="buy_now_btn"><a href="">View More</a></button>
+                  <button id="buy_now_btn"><a href="/product/product_detail/{{product.id}}">View More</a></button>
                </div>
             </div>
          </div>

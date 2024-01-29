@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from product.models import ProductTable
 from django.db.models import Q
+
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):
@@ -55,3 +58,60 @@ def filter_by_price_range(request):
    filterd_products=ProductTable.objects.filter(q1 & q2 & q3)
    data['products']=filterd_products
    return render(request,'product/index.html',context=data)
+
+def product_detail(request,pid):
+   product=ProductTable.objects.get(id=pid)
+   return render(request,'product/product_detail.html',{'product':product})
+
+def register_user(request):
+   data={}
+   if request.method=="POST":
+      uname=request.POST['username']
+      upass=request.POST['password']
+      uconf_pass=request.POST['password2']
+      #implementing validation
+      if (uname=='' or upass =='' or uconf_pass ==''):
+         data['error_msg']='Fileds cant be empty'
+         return render(request,'user/register.html',context=data)
+      elif(upass!=uconf_pass):
+         data['error_msg']='Password and confirm password does not matched'
+         return render(request,'user/register.html',context=data)
+      elif(User.objects.filter(username=uname).exists()):
+         data['error_msg']=uname + ' alredy exist'
+         return render(request,'user/register.html',context=data)
+      else:
+         user=User.objects.create(username=uname)
+         #here username and password aee column names present inside auth_user table
+         user.set_password(upass) #encrypting passowrd
+         user.save() #saving data into table
+         # return HttpResponse("Registraion done") 
+         return redirect('/user/login')
+   return render(request,'user/register.html')
+
+def login_user(request):
+   data={}
+   if request.method=="POST":
+      uname=request.POST['username']
+      upass=request.POST['password']
+      #implementing validation
+      if (uname=='' or upass ==''):
+         data['error_msg']='Fileds cant be empty'
+         return render(request,'user/login.html',context=data)
+      elif(not User.objects.filter(username=uname).exists()):
+         data['error_msg']=uname + ' user is not registered'
+         return render(request,'user/login.html',context=data)
+      else:
+         #from django.contrib.auth import authenticate
+         user=authenticate(username=uname,password=upass)
+         print(user)
+         if user is not None:
+            login(request,user)
+            return redirect('/product/index')
+         else:
+            data['error_msg']='Wrong Password'
+            return render(request,'user/login.html',context=data)   
+   return render(request,'user/login.html')
+
+def user_logout(request):
+   logout(request)
+   return redirect('/product/index')

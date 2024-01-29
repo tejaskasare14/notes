@@ -10,5 +10,6 @@ urlpatterns = [
     path('sort/<sort_value>', views.sort_by_price),
     path('rating/<rating_value>', views.filter_by_rating),
     path('price', views.filter_by_price_range),
+    path('product_detail/<pid>', views.product_detail),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
