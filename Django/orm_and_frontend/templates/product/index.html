@@ -37,6 +37,7 @@
    
                {% if user.is_authenticated %}
                   <li>   <a href="/user/logout">Logout</a>   </li>
+                  <li>   <a href="">View cart</a>   </li>
                {% else %}
                   <li>   <a href="/user/login">Login</a>    </li>
                   <li>   <a href="/user/register">Register</a> </li>
@@ -96,7 +97,7 @@
                   <p>{{product.name|upper}}</p>
                   <p>{{product.price}}</p>
                   <p>{{product.rating}}</p>
-                  <button id="add_to_cart_btn"><a href="">Add to Cart</a></button>
+                  <button id="add_to_cart_btn"><a href="/product/add_to_cart/{{product.id}}">Add to Cart</a></button>
                   <button id="buy_now_btn"><a href="/product/product_detail/{{product.id}}">View More</a></button>
                </div>
             </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from product.models import ProductTable
+from product.models import ProductTable,CartTable
 from django.db.models import Q
 
 from django.contrib.auth import authenticate,login,logout
@@ -115,3 +115,19 @@ def login_user(request):
 def user_logout(request):
    logout(request)
    return redirect('/product/index')
+
+def add_to_cart(request,pid):
+   if request.user.is_authenticated:
+      uid = request.user.id
+      print("user id = " ,uid)
+      print("product id = ", pid)
+      #we cant pass only id in cart table, it is expecting object of User and Product
+      #therefore below line will gives error
+      #cart=CartTable.objects.create(pid=pid,uid=uid)
+      user=User.objects.get(id=uid)
+      product=ProductTable.objects.get(id=pid)
+      cart=CartTable.objects.create(pid=product,uid=user)
+      cart.save()
+      return HttpResponse("product added to cart")
+   else:
+      return redirect("/user/login")
