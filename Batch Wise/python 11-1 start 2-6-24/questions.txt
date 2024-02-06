@@ -1,0 +1,13 @@
+----------- General -------------
+why python?
+what is python?
+features of python?
+applications of python?
+
+----------- variable -------------
+what is variable?
+what is print() function?
+
+----------- Data Type -------------
+what is datatype
+list out data types in python with example
