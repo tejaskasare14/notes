@@ -11,3 +11,14 @@ what is print() function?
 ----------- Data Type -------------
 what is datatype
 list out data types in python with example
+what is type() function?
+
+----------- Operators -------------
+what are Operators in python?
+
+----------- input -------------
+how to take input from user?
+what is deafult data type of input()
+what is type casting?
+
+
