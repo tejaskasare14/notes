@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+   {% load static %}
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/product_style.css' %}">
+   <style>
+      header {
+         width: 100%;
+         height: 50px;
+         background-color: orange;
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         }
+         header * {
+         display: inline;
+         }
+         header li {
+         margin: 20px;
+         }
+         header li a {
+         color: blue;
+         text-decoration: none;
+         }
+   </style>
+</head>
+<body>
+   {% if messages %}
+      
+         {% for message in messages %}
+            {% if message.tags %} 
+               <p style="color: brown;">{{message}}</p>
+            {% endif %}
+         {% endfor %}
+     
+   {% endif %}
+
+
+
+
+
+   <div class="navbar">
+      <header>
+         <nav>
+            <ul>
+               <li>   <a href="/product/index">Home</a>     </li>
+               <li>   <a href="/product/index">Product</a>  </li>
+   
+               {% if user.is_authenticated %}
+                  <li>   <a href="/user/logout">Logout</a>   </li>
+                  <li>   <a href="/product/view_cart">View cart <span style="background-color: white;">{{cart_count}}</span></a></li>
+               {% else %}
+                  <li>   <a href="/user/login">Login</a>    </li>
+                  <li>   <a href="/user/register">Register</a> </li>
+               {% endif %}
+               
+            </ul>
+         </nav>
+         </header> 
+   </div>
+   <div class="container">
+      <div class="filter_area">
+         <div class="by_category">
+            <h2>Filter By Categoty</h2>
+            <ul>
+               <li><a href="/product/index">All</a></li>
+               <li><a href="/product/filter/1">By Mobile</a></li>
+               <li><a href="/product/filter/2">By Clothes</a></li>
+               <li><a href="/product/filter/3">By Shoes</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>
+         <div class="by_price">
+            <h2>Filter By Price</h2>
+            <form action="/product/price">
+               <label for="">Min:</label>
+               <input type="number" name="min"> <br><br>
+               <label for="">Max:</label>
+               <input type="number" name="max"> <br><br>
+               <input type="submit">
+            </form>
+         </div>
+<div>------------------------------------------------</div>
+         <div class="sort_by_price">
+            <h2>Sort By Price</h2>
+            <ul>
+               <li><a href="/product/sort/desc">High to Low</a></li>
+               <li><a href="/product/sort/asc">Low to High</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>    
+         <div class="by_rating">
+            <h2>Sort By Rating</h2>
+            <ul>
+               <li><a href="/product/rating/3">3 and above</a></li>
+               <li><a href="/product/rating/4">4 and above</a></li>
+            </ul>
+         </div>
+<div>------------------------------------------------</div>        
+      </div>
+      <div class="product_area">
+         {% for product in products %}
+         <div class="card">
+            <div class="card-items">
+               <!-- <img src="{% static 'images/shirt.webp' %}" alt=""> -->
+               <img src="http://127.0.0.1:8000/product/media/{{product.image}}" alt="">
+               <div class="card-text">
+                  <p>{{product.name|upper}}</p>
+                  <p>{{product.price}}</p>
+                  <p>{{product.rating}}</p>
+                  <button id="add_to_cart_btn"><a href="/product/add_to_cart/{{product.id}}">Add to Cart</a></button>
+                  <button id="buy_now_btn"><a href="/product/product_detail/{{product.id}}">View More</a></button>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+</body>
+</html>

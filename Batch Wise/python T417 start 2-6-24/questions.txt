@@ -1,0 +1,34 @@
+----------- General -------------
+why python?
+what is python?
+features of python?
+applications of python?
+
+----------- variable -------------
+what is variable?
+what is print() function?
+
+----------- Data Type -------------
+what is datatype
+list out data types in python with example
+what is type() function?
+
+----------- Operators -------------
+what are Operators in python?
+
+----------- input -------------
+how to take input from user?
+what is deafult data type of input()
+
+----------- type casting -------------
+what is type casting? write all type casting functions?
+
+----------- conditional statement -------------
+what are conditional statement available in python?
+check given number is even or odd
+check given no is +ve, -ve or zero
+take age from user and check wheter he/she is eligible for votting
+take number from user and check if that number is perfect square
+take number from user and check that number is 2 digit number
+
+
