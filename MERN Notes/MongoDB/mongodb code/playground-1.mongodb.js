@@ -97,7 +97,8 @@ use('amazon');
 //    {  _id : ObjectId('65c7592b51069dbde24873c2')}
 // )
 
-//db.products.find()
+db.products.find()
+
 
 
 
