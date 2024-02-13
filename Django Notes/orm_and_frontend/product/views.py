@@ -157,16 +157,77 @@ def view_cart(request):
    data['user']=user
    #couting total items in cart
    count=id_specific_cartitems.count()
-   data['cart_count']=count
+   #data['cart_count']=count
    #couting total price of cart
    total_price = 0
+   total_quantity=0
    for item in id_specific_cartitems:
       #print(item.pid.price)
-      total_price+=item.pid.price
+      #total_price+=item.pid.price
+      total_price=(total_price+item.pid.price)*(item.quantity)
+      total_quantity+=item.quantity
    data['total_price']=total_price
+   data['cart_count']=total_quantity
    return render(request,'product/cart.html',context=data)
 
 def remove_item(request,cartid):
    cart=CartTable.objects.get(id=cartid)
    cart.delete()
    return  redirect('/product/view_cart')
+
+def update_quantity(request,flag,cartid):
+   #print(type(flag))
+   cart=CartTable.objects.filter(id=cartid)
+   actual_quantity = cart[0].quantity
+   if(flag=="1"):
+      cart.update(quantity = actual_quantity+1)
+      pass
+   else:
+      if(actual_quantity>1):
+         cart.update(quantity = actual_quantity-1)
+      pass
+   return redirect('/product/view_cart')
+
+# import calendar
+# import time
+# from product.models import OrderTable
+# def place_order(request):
+#    data={}
+#    current_GMT = time.gmtime()
+#    time_stamp = calendar.timegm(current_GMT)
+#    user_id = request.user.id
+#    oid=str(user_id)+"-"+str(time_stamp)
+#    #in above line we have created custome order id by combining user id and current time stamp
+#    cart=CartTable.objects.filter(uid=user_id)
+#    for data in cart:
+#       # print(data.id, data.pid, data.uid, data.quantity, sep="--")
+#       order=OrderTable.objects.create(order_id=oid,quantity=data.quantity,pid=data.pid,uid=data.uid)
+#       order.save()
+#       cart.delete()
+#    order=OrderTable.objects.filter(uid=user_id)
+#    total_price = 0
+#    total_quantity=0
+#    for item in order:
+#       total_price=(total_price+item.pid.price)*(item.quantity)
+#       total_quantity+=item.quantity
+#    data['products']=order   
+#    data['total_price']=total_price
+#    data['cart_count']=total_quantity
+#    return render(request,'product/order.html',context=data)
+
+
+def place_order(request):
+   data ={}
+   user_id=request.user.id
+   user=User.objects.get(id = user_id)
+   id_specific_cartitems=CartTable.objects.filter(uid=user_id)
+   data['products']=id_specific_cartitems
+   data['user']=user
+   total_price = 0
+   total_quantity=0
+   for item in id_specific_cartitems:
+      total_price=(total_price+item.pid.price)*(item.quantity)
+      total_quantity+=item.quantity
+   data['total_price']=total_price
+   data['cart_count']=total_quantity
+   return render(request,'product/order.html',context=data)

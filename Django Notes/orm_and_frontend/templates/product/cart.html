@@ -23,9 +23,9 @@
                   <p>{{product.pid.details}}</p>
                   <p><span>&#8377;</span> {{product.pid.price}}</p>
                   <p>{{product.pid.rating}}</p>
-                  <a class="btn btn-danger">-</a>
+                  <a class="btn btn-danger" href="/product/update_quantity/0/{{product.id}}">-</a>
                   <input class="text-center" type="number" value="{{product.quantity}}" disabled  >
-                  <a class="btn btn-success">+</a>
+                  <a class="btn btn-success" href="/product/update_quantity/1/{{product.id}}">+</a>
                   <a class="btn btn-danger" href="/product/remove_item/{{product.id}}">Delete</a>
                </div>
                <hr class="mt-3">
@@ -36,7 +36,7 @@
             <h1>Hi, {{user.username|title}}</h1>
             <h3>Total Items: {{cart_count}}</h3>
             <h3>Total Price: <span>&#8377;</span> {{total_price}}</h3>
-            <a class="btn btn-warning w-100" href="">Proceed to Buy</a>
+            <a class="btn btn-warning w-100" href="/product/place_order">Place Order</a>
          </div>
       </div>
    </div>

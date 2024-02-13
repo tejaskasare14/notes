@@ -31,4 +31,22 @@ take age from user and check wheter he/she is eligible for votting
 take number from user and check if that number is perfect square
 take number from user and check that number is 2 digit number
 
+-------------loops----------------------------------
+why we need loops
+type of loops in python
+for vs while loop
+explain range() function
+what is step value in range() function  
+print even numbers between 1 to 10     
+prin all characters in give string "hanuman"   
+print all numbers in given list 
+print even and odd numbers from below list     
+print only 2 digit numbers from give list
+number guessing game usin while loop
+print 1-5 numbers using while loop
+
+-------------------transfer------------------------
+what is use of pass,break,continue explain with example
+
+
 

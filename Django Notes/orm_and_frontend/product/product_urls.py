@@ -13,6 +13,8 @@ urlpatterns = [
     path('product_detail/<pid>', views.product_detail),
     path('add_to_cart/<pid>', views.add_to_cart),
     path('view_cart/', views.view_cart),
-     path('remove_item/<cartid>', views.remove_item),
+    path('remove_item/<cartid>', views.remove_item),
+    path('update_quantity/<flag>/<cartid>', views.update_quantity),
+    path('place_order/', views.place_order),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
