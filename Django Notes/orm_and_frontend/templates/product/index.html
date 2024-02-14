@@ -50,7 +50,7 @@
                {% if user.is_authenticated %}
                   <li>   <a href="/user/logout">Logout</a>   </li>
                   <li>   <a href="/product/view_cart">View cart <span style="background-color: white;">{{cart_count}}</span></a></li>
-                  <li>   <a href="">Edit Profile </a></li>
+                  <li>   <a href="/user/edit_profile">Edit Profile </a></li>
                {% else %}
                   <li>   <a href="/user/login">Login</a>    </li>
                   <li>   <a href="/user/register">Register</a> </li>

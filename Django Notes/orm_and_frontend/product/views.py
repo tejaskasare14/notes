@@ -90,6 +90,8 @@ def register_user(request):
          #here username and password aee column names present inside auth_user table
          user.set_password(upass) #encrypting passowrd
          user.save() #saving data into table
+         customer=CustomerDetails.objects.create(uid=user)
+         customer.save()
          # return HttpResponse("Registraion done") 
          return redirect('/user/login')
    return render(request,'user/register.html')
@@ -231,3 +233,25 @@ def place_order(request):
    data['total_price']=total_price
    data['cart_count']=total_quantity
    return render(request,'product/order.html',context=data)
+
+from product.models import CustomerDetails
+def edit_profile(request):
+   data={}
+   user_id=request.user.id
+   customer_querySet=CustomerDetails.objects.filter(uid=user_id)
+   customer = customer_querySet[0]
+   data['customer']=customer
+   if request.method=="POST":
+      first_name=request.POST['first_name']
+      last_name=request.POST['last_name']
+      phone=request.POST['phone']
+      email=request.POST['email']
+      address_type=request.POST['address_type']
+      full_address=request.POST['full_address']
+      pincode=request.POST['pincode']
+      print(first_name,last_name,phone,email,address_type,full_address,pincode)
+      customer_querySet.update(first_name=first_name,last_name=last_name,phone=phone,email=email,address_type=address_type,full_address=full_address,pincode=pincode)
+      return redirect('/product/index')
+   return render(request,'user/edit_profile.html',context=data)
+
+   

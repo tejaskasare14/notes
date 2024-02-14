@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <table align="center" border="1" cellpadding="5" cellspacing="5">
+      <form method="POST">
+         {% csrf_token %}
+      <thead>
+         <tr>
+            <th colspan="2">
+               Edit Profile
+               {% if error_msg %}
+               <p style="color: red; font-weight: lighter;">{{error_msg}}</p>
+               {% endif %}
+            </th>
+            
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td><label for="first_name">First Name</label></td>
+            <td><input type="text" id="first_name" name="first_name" value="{{customer.uid}}"></td>
+         </tr>
+         <tr>
+            <td><label for="last_name">Last Name</label></td>
+            <td><input type="text" id="last_name" name="last_name" value="{{customer.last_name}}"></td>
+         </tr>
+         <tr>
+            <td><label for="phone">Phone</label></td>
+            <td><input type="tel" id="phone" name="phone" value="{{customer.phone}}"></td>
+         </tr>
+         <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" id="email" name="email" value="{{customer.email}}"></td>
+         </tr>
+         <tr>
+            <td><label for="address_type">Type</label></td>
+            <td>
+               <select name="address_type" id="address_type">
+                  <option value="home">Home</option>
+                  <option value="office">Office</option>
+                  <option value="other">Other</option>
+               </select>
+            </td>
+         </tr>
+         <tr>
+            <td><label for="full_address">Address</label></td>
+            <td>
+               <textarea name="full_address" id="full_address" cols="30" rows="5">
+                  {{customer.full_address}}
+               </textarea>
+            </td>
+         </tr>
+         <tr>
+            <td><label for="pincode">Pincode</label></td>
+            <td><input type="number" id="pincode" name="pincode" value="{{customer.pincode}}"></td>
+         </tr>
+         <tr>
+            <td><input type="reset"></td>
+            <td><input type="submit"></td>
+         </tr>
+      </tbody>
+   </form>
+   </table>
+</body>
+</html>
