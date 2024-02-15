@@ -86,7 +86,34 @@ what is use of pass,break,continue explain with example
     1
 
 ----------------------- string ---------------------------------
-   
+what is string? in how many quotes we can write a string
+what is use of triple quotes
+how to acces indivisaul character from string
+what is index? is index can be negative
+how we can access all chacters at a time by using any loop
+what is default step value of string for slicing
+what is default start value of string for slicing
+what is default end value of string for slicing
+what is slicing in python? write syntax and explain it
+explain the working of negative step value
+which operators we use on string 
+how to convert string into lower, upper, title, capitlize or swap
+how to check string  is upper, lower or title case
+how to check string  only contains alphabates
+how to check string  contains numbers and alphabates
+how to check string only contains numbers
+how to check string is a space?
+what is diff between index and find
+what is diff between index and rindex
+how to split and join a string
+how to get  ascii value of a character 
+how to check  start and end part of string
+how to replace string characters?
+how to count chactares in string
+
+-------------- LIST DATA TYPE ----------------------------------
+
+
 
 
 

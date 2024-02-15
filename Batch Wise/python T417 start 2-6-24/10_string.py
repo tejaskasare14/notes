@@ -157,3 +157,78 @@ print("R45".isdigit()) #False
 
 print("Tejas Kasare".isspace()) #False
 print(" ".isspace()) #True
+
+#----------------index and find-------------------
+#data = "a2b3c2"
+#aabbbcc
+name="viratkohli"
+print("i" in name)
+print(name.index('i')) #return index of first occurance given character
+#print(name.index('z')) #since z is not present inside virat, we will get error
+print(name.index('ir'))
+print(name.rindex('i')) #return index of last occurance given character
+
+name="viratkohli"
+print(name.find('i')) #return index of first occurance given character
+print(name.rfind('i'))
+print(name.find('z'))
+result =  name.find('z')
+if result==-1:
+   print("given substring is not presnt in name")
+
+#-------------- split and join-------------------------------------
+date  = "15/02/2024"
+splited_date = date.split("/") #["15", "02", "2024"]
+print(splited_date)
+
+joinded_date = "-".join(splited_date)
+print(joinded_date)
+
+#---------getting ascii value of a character ------------------
+print(ord('a'))
+
+#-------------- checking start and end part of string-------------------------------------
+print("delhi".startswith('d'))
+print("delhi".startswith('del'))
+print("delhi".startswith('e'))
+print("delhi".endswith('hi'))
+print("delhi".endswith('i'))
+print("delhi".endswith('I')) #case sensitive
+
+#--------------------replacing string ----------------------
+name = "raju"
+print(name)
+updated_name1 = name.replace("r","k")
+print(updated_name1)
+
+updated_name2 = name.replace("ra","ba")
+print(updated_name2)
+
+updated_name3 = name.replace("z","k")
+print(updated_name3)
+
+updated_name4 = name.replace("R","m") #case sensitive
+print(updated_name4)
+
+x="tomatto".replace("t","o",2)
+print(x)
+
+#-----------------count chactares in string -----------------
+name = "pooja" #count number of o
+print(name.count('o'))
+print(name.count('z'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
