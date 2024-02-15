@@ -223,6 +223,8 @@ def place_order(request):
    user_id=request.user.id
    user=User.objects.get(id = user_id)
    id_specific_cartitems=CartTable.objects.filter(uid=user_id)
+   customer = CustomerDetails.objects.get(uid = user_id)
+   data['customer']=customer
    data['products']=id_specific_cartitems
    data['user']=user
    total_price = 0
@@ -254,4 +256,18 @@ def edit_profile(request):
       return redirect('/product/index')
    return render(request,'user/edit_profile.html',context=data)
 
-   
+import razorpay   
+def make_payment(request):
+   #getting total amount
+   user_id=request.user.id
+   id_specific_cartitems=CartTable.objects.filter(uid=user_id)
+   total_price = 0
+   for item in id_specific_cartitems:
+      total_price=(total_price+item.pid.price)*(item.quantity) 
+      
+   client = razorpay.Client(auth=("rzp_test_ls3ufyYec3WWtv", "Cm3iRE0s8JpvOE5hTg9dS8tP"))
+   data = { "amount": total_price*100, "currency": "INR", "receipt": "order_rcptid_11" }
+   payment = client.order.create(data=data)
+   print(payment)
+   #return HttpResponse("Payment Done")
+   return render(request,'product/pay.html',context=data)

@@ -44,7 +44,11 @@
             <h5>Total Price: <span>&#8377;</span> {{total_price}}</h5>
             <a class="btn btn-primary w-100" href="/product/view_cart">View Cart</a>
             <br><br>
-            <a class="btn btn-warning w-100" href="/product/place_order">Make Payment</a>
+            <h4>Delivery Address :</h4>
+            <p>{{customer.full_address}}</p>
+            <p>pincode : {{customer.pincode}}</p>
+            <br><br>
+            <a class="btn btn-warning w-100" href="/product/make_payment">Make Payment</a>
          </div>
       </div>
    </div>
