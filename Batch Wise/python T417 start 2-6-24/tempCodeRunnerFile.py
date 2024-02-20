@@ -1,9 +1,9 @@
-l1 = [10,20]
-l2 = [30,40]
-l3 = l1+l2
-print(l3) #[10, 20, 30, 40]
-#l4 = l1*l2 ERROR
-l5 = l1*3 
-print(l5) #[10, 20, 10, 20, 10, 20]
-print(10 in l1)
-print(100 not in l1)
+data = [22,33,44,55,11,66]
+even_nums=[]
+for num in data:
+   if(num%2==0):
+      even_nums.append(num+5)     
+print(even_nums)
+
+even_list = [i+5 for i in data if(i%2==0)]
+print(even_list)

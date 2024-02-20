@@ -112,6 +112,18 @@ how to replace string characters?
 how to count chactares in string
 
 -------------- LIST DATA TYPE ----------------------------------
+what is list
+what are list properties?
+what are the possible ways to create a list
+which operators we can use on the list
+how to access list elements
+how to get position of perticular element in list
+how to get occurance of perticular element in list
+what is diff between append, insert and extend
+what are functions available to remove element from list
+how to reverse and sort list items?
+what is list comprehension? write syntax for it
+
 
 
 

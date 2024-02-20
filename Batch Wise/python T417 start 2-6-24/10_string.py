@@ -1,6 +1,7 @@
 #string : is colletion of numbers, alphabates or symbols enclosed withing 
 #         single quote, double quotes or triple quotes
 #why triple quotes? : to define multi line string in python, we use triple quotes
+#string is immutable data type, once we declare a string we cant perform any changes on it
 
 f = 'z'
 g = 'python123$'
