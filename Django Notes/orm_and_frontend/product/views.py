@@ -166,7 +166,7 @@ def view_cart(request):
    for item in id_specific_cartitems:
       #print(item.pid.price)
       #total_price+=item.pid.price
-      total_price=(total_price+item.pid.price)*(item.quantity)
+      total_price=total_price+(item.pid.price*item.quantity)
       total_quantity+=item.quantity
    data['total_price']=total_price
    data['cart_count']=total_quantity

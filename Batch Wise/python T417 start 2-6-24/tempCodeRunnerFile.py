@@ -1,9 +1,4 @@
-data = [22,33,44,55,11,66]
-even_nums=[]
-for num in data:
-   if(num%2==0):
-      even_nums.append(num+5)     
-print(even_nums)
+t10 = (40,50,70,90,10)
 
-even_list = [i+5 for i in data if(i%2==0)]
-print(even_list)
+print(t10[1])
+print(t10[8])
