@@ -81,5 +81,32 @@ index = 0
 while(index<5):
    print(t10[index])
    index = index+1
-#index,count,sorted,min,max
+   
+
+#len,index,count,sorted,min,max
+t11 = (10,50,60,30,50)
+print(len(t11))
+print(t11.index(50))
+#print(t11.index(90))
+print(t11.count(50))
+print(t11.count(500))
+print(min(t11))
+print(max(t11))
+print(sorted(t11)) #returns new list 
+print(t11)
+print(sorted(t11,reverse=True)) #returns new list 
+
+
 #tuple packing and unpacking
+t12 = 10,"hello",20.3 #packing of multiple values into one variable
+print(t12)
+
+v1,v2,v3 = t12 #unpacking of tuple into exact number of variables
+print(v1)
+print(v2)
+print(v3)
+
+#i1,i2 = t12 #ValueError: too many values to unpack (expected 2)
+
+e1 = t12 #it wil work
+print(e1)
