@@ -125,6 +125,53 @@ how to reverse and sort list items?
 what is list comprehension? write syntax for it
 
 
+---------------------TUPLE DATA TYPE ----------------------------
+what is tuple
+what are tuple properties
+what is difference between tuple and list
+how to create tuple
+what operators we use on tuple
+how to add or remov elements from tuple
+how to access tuple elements? - index,slicing,loop
+what are tuple built in functions? - len,index,count,sorted,min,max
+what is tuple packing and unpacking
+
+----------------------SET DATA TYPE ---------------------------------
+what is set
+what are set properties
+how to create set
+can we use + or * operators on set?
+how to accesselements from set
+how to addi elements into set
+how to removing  elements from set
+what are union ,intersection difference symmetric_difference operations? 
+
+--------------------FROZENSET DATA TYPE --------------------------------
+what is frozenset
+what are frozenset properties
+how to create frozenset
+what are union ,intersection difference symmetric_difference operations? 
+
+
+----------------------DICTINARY DATA TYPE ------------------------------
+what is dictionary?
+what are dict properties
+how to create a dictionary 
+how to add,update and delete dict elements without using any built in function
+what functions we use to access data from dict?
+How to remove elements from dict?
+what is built in function to add new key-value pair in dict?
+what if duplicate key is present in dictinary?
+
+----------------------functions------------------------------------------
+what is function? 
+what is diff between parameter and arguments
+what are type of arguments in function
+what do you mean by local variable in function? explain with example
+why we need return a value from function?
+how many values a function can return? explain with example
+
+
 
 
 

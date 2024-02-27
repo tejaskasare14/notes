@@ -70,3 +70,15 @@ x = 200,360
 print(x)
 
 
+def add_n_numbers(*n):
+   numbers = n
+   sum = 0
+   for number in numbers:
+      #print(number,end=",")
+      sum = sum+ number
+   print(sum)
+
+add_n_numbers(10,2)
+add_n_numbers(10,20)
+add_n_numbers(10,20,30)
+
