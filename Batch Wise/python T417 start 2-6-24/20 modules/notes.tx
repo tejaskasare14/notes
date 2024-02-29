@@ -1,0 +1,5 @@
+module is python file, consist of variables,functions or classes but this python file (module) executes externally
+there are 3 types of mudlues:
+   1. internal/built in: which are alredy present inside python
+   2. external: which we have to download and use
+   3. user defined: created by user/programer

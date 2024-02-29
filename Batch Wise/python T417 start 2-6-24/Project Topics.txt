@@ -1,0 +1,21 @@
+Abhijeet    : Blood Bank
+Prasad      : Medicine Seller
+Sarvshresth : clothes shopping
+Raj         : Train reservation
+Mrunmay     : Organic Cosmetics
+Roshan      : Tourism
+Komal       : Furniture shop
+Omkar       : Rental Car
+Shruti	    : OLX
+Pratham     : Pet care
+Asha        : Online Books selling
+Rutuja      : Cooking Baking
+Supriya     : Urban clap - Home cleaning servvice
+Sejal       : Nursery 
+Pravin      : Amazon clone
+Yuvraj      : Gym - membrship,PT,products
+Anam        : Car selling
+Rohit       : Hotel booking
+
+
+PC/Laptop customization
