@@ -1,0 +1,17 @@
+---------------variable------------------------
+what is variable?
+what is difference between var,let or const
+---------------datatype-------------------
+what are datatypes available in JS? list tem with example
+what is array?
+what are array properties?
+what are built in functions available to add/remove elements from array
+how to access array items?
+what ahhpes if there is no specified index present?
+what is objec?
+what is short hand property?
+how to access object elements?
+what is dynamic property of object?
+what is variable housting?
+
+
