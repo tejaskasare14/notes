@@ -16,3 +16,16 @@ x = {data6,data7}
 console.log(x);
 emp = {...data6,...data7}
 console.log(emp);
+
+//spred in function parameter
+function add(...num)
+{
+   console.log(num);
+   sum=0
+   for (x of num)
+   {
+      sum+=x;
+   }
+   console.log(sum);
+}
+add(50,10,30,40,20,11)
