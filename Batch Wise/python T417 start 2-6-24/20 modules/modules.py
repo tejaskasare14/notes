@@ -5,4 +5,9 @@ def add(a,b):
    result = a+b
    return result
 
+if __name__=="__main__":
+   print("file is executed internally")
+else:
+   print("file is executed externally")
+
  

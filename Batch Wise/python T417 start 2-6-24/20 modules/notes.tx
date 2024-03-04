@@ -3,3 +3,7 @@ there are 3 types of mudlues:
    1. internal/built in: which are alredy present inside python
    2. external: which we have to download and use
    3. user defined: created by user/programer
+
+   __name__ : this is pythons built in variable to check whether the file is executed as
+               module or a simple python file
+   if __name__=="__main__" : if the file is executed internally then this condition will be true

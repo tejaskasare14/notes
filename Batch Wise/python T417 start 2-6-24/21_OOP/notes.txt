@@ -1,0 +1,11 @@
+class : plan or bluprint for an object
+object : physical existance of an class
+reference variable : rv is used to access proprties and behavious of an object
+properties : variable
+behaviours : methods
+methods : function inside class is called as method
+class name must start with capital letter
+self : when we create an object, PVM brodcast the refence of an object to the methods present inside a class
+       now, it is responsibility of every (instance)method to receive that object. So to receive and store the 
+       object refence we use self.
+       self is not keyword. you can use any word other than self
