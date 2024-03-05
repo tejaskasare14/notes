@@ -6,6 +6,26 @@ behaviours : methods
 methods : function inside class is called as method
 class name must start with capital letter
 self : when we create an object, PVM brodcast the refence of an object to the methods present inside a class
-       now, it is responsibility of every (instance)method to receive that object. So to receive and store the 
+       now, it is responsibility of every (instance)method to receive that object reference. So to receive and store the 
        object refence we use self.
        self is not keyword. you can use any word other than self
+       self must be first parameter of instance method and contructor
+       self is pointing to the current object
+contructor:
+       constructor is magic method in python
+       magic method becuase it get called automatically when object is created
+       used to initialize instance variable 
+       instance variable : value changes from object to object
+       name of contructor is fixed i.e __init__()
+       first parameter of contructor must be self
+varibles:
+       instance : the variable whos value changes from object to object      
+                  we need self to work with  instance variable
+       static :   the varible whos value is same for all object
+                  this variables present outside of all methods but inside of class
+                  this are also called as class variable
+                  this are like global varible : any method present inside a class can access this variables
+                  we need self or class name to access static varible
+       local :    the varible present inside any method for temp use
+                  we cant access this varibles outside of that method
+
