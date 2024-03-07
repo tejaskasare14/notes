@@ -170,6 +170,21 @@ what are type of arguments in function
 what do you mean by local variable in function? explain with example
 why we need return a value from function?
 how many values a function can return? explain with example
+how many types of varibles present inside functional programming? explain with example
+why we need global keyword in python? state 2 uses
+what is recursive function? explain with example
+
+------------------------modules----------------------------------------------
+what do you mean by modules in python? what are types of modules
+what is __name__?
+
+------------------------OOP----------------------------------------------
+what is OOP?
+define class,object,reference variable,properties and behaviour
+what is self?
+what is constructor? state 5 properties of contructor.
+what are types of varibles in OOP?
+
 
 
 

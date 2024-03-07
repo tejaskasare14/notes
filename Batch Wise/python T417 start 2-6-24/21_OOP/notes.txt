@@ -21,11 +21,28 @@ contructor:
 varibles:
        instance : the variable whos value changes from object to object      
                   we need self to work with  instance variable
-       static :   the varible whos value is same for all object
+       class(static) :   the varible whos value is same for all object
                   this variables present outside of all methods but inside of class
                   this are also called as class variable
                   this are like global varible : any method present inside a class can access this variables
-                  we need self or class name to access static varible
+                  we need self or class name to access class varible
        local :    the varible present inside any method for temp use
                   we cant access this varibles outside of that method
+methods in OOP:
+       there are 4 types of methods in OOP - constructor,instance,class and static method
+
+Inheritance :
+       problem : to access members (variables/methods) of one class to anther
+       solution: those classes must be in relationship
+              1. HAS-A
+              2. IS-A 
+
+       HAS-A:
+              when we want to access perticular member of one class to another
+              we can achive this by creating object of required class
+       IS-A:
+              when we want to access all membrs of one class to another
+              we can cheive this by creating parent-child relationship
+              this parent child relationship is called as Inheritance
+              
 
