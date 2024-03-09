@@ -1,0 +1,11 @@
+diff between textContent VS innerHTML VS Child node creation
+react : 
+   JS lirary to make web and native application
+   follows componet based arch
+   declarative (most of built in code)
+   provide virtual DOM
+   we can add REACT any point of time in our project.
+
+creating child node
+
+

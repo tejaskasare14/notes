@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1 id="my_h1">My text will change, not tag</h1>
+   <div id="my_div"> <p>I will vanish and h2 tag will appear</p> </div>
+   <div id="root">
+      <p>you will find h3 tag inside this div</p>
+   </div>
+   <script>
+      //text content
+      let my_h1=document.getElementById("my_h1")
+      my_h1.textContent = "HELLO REACT"
+
+      //innerHTML
+      let my_div=document.getElementById("my_div")
+      my_div.innerHTML = "<h2>Hello React</h2>"
+
+      //child node creation
+      let root=document.getElementById("root")
+
+      let my_h3=document.createElement("h3")
+      my_h3.textContent = "new h3 tag with some content"
+
+      root.appendChild(my_h3)
+   </script>
+</body>
+</html>

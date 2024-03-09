@@ -14,4 +14,9 @@ how to access object elements?
 what is dynamic property of object?
 what is variable housting?
 
+------------------operators----------------------------------
+list out operators available in JS
+
+------------------conditional statements and switch ----------------------
+
 
