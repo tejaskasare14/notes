@@ -1,0 +1,67 @@
+Error : unwanted event that occur when we run the program that causes termination of our program
+Error has 2 types:
+   compile time error and runtime error
+Compile time error:
+   print("hi")  => printt("hi")
+   causes beause of wrong syntax by programer
+   this compile time errors are 100% solvable
+
+Run time error :
+   this type of error raise while running an program.
+   this error are caused by wrong input(10/0),wrong logic, light gobe, internet connection
+   this errors are not solvable but we can provide alternate way for normal execution of program 
+   this alternate way of handling run time error is called as Exaception Handling
+   Run time errors are also called as Exceptions
+
+Exception Handling:
+   the LOC (line of code(s)) which may raise an exception is called as - Risky code
+   the LOC that handlies exception is called as handling code
+where to write this risky/handling code:
+   we have to write risky code inside try block
+   we have to write handling code inside except block
+
+Exception Handling Flow : 
+   when exception raised inside try block, it creates object of that exeption,
+   then that object looks for its respective class inside except block. if that class is found,
+   then it leads to the normal execution of a program otherise abnormal
+
+Important conclusions:
+   - there must be atleast one except block if there is try block
+   - if excption raised at any line(even in any block), then the code after that line will not execute
+   - we can write multiple except block for one try block
+   - when any excption raised, python creates its object and find its coresponding class in Except block
+     if class found, then program will terminate/excecutes normally otherwise abnormally
+   - if there is not except block for perticular exception (not even default except) then program will
+     be terminate abmormally
+
+
+
+line 1
+line 2
+try:
+   line 3
+   line 4
+except ClassName:
+   line 5
+line 6
+
+exception at       handled?         lines to be exceucte    termination
+line 1                N                      -                   AB
+line 2                N                      1                   AB    
+line 3                N                      1,2                 AB
+line 3                Y                    1,2,5,6               N 
+line 4                N                    1,2,3                 AB
+line 4                Y                    1,2,3,5,6              N 
+line 5                N                    1,2,[3 if ex at line4] AB
+line 6                N                    1,2,[3,4,5]            AB
+
+finally block :
+   get excecutes even if exception is not handled
+   generally used to write resource deallowcation code
+   finally will not execute if the exception raised outside of try block
+
+
+                                                                                                                                                                  
+                                                                                    
+                                                                                     
+   
