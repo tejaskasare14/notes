@@ -3,33 +3,60 @@ object : physical existance of an class
 reference variable : rv is used to access proprties and behavious of an object
 properties : variable
 behaviours : methods
+-----------------------------------------------------------------------------
 methods : function inside class is called as method
 class name must start with capital letter
-self : when we create an object, PVM brodcast the refence of an object to the methods present inside a class
-       now, it is responsibility of every (instance)method to receive that object reference. So to receive and store the 
-       object refence we use self.
-       self is not keyword. you can use any word other than self
-       self must be first parameter of instance method and contructor
-       self is pointing to the current object
+-----------------------------------------------------------------------------
+self : 
+	-> when we create an object, PVM brodcast the refence of an object to the methods present 		   inside a class
+        -> now, it is responsibility of every (instance)method to receive that object reference. So to 	   receive and store the object refence we use self.
+        -> self is not keyword. you can use any word other than self
+        -> self must be first parameter of instance method and contructor
+        -> self is pointing to the current object
+-----------------------------------------------------------------------------
 contructor:
-       constructor is magic method in python
-       magic method becuase it get called automatically when object is created
-       used to initialize instance variable 
-       instance variable : value changes from object to object
-       name of contructor is fixed i.e __init__()
-       first parameter of contructor must be self
-varibles:
-       instance : the variable whos value changes from object to object      
-                  we need self to work with  instance variable
-       class(static) :   the varible whos value is same for all object
-                  this variables present outside of all methods but inside of class
-                  this are also called as class variable
-                  this are like global varible : any method present inside a class can access this variables
-                  we need self or class name to access class varible
-       local :    the varible present inside any method for temp use
-                  we cant access this varibles outside of that method
-methods in OOP:
-       there are 4 types of methods in OOP - constructor,instance,class and static method
+       -> constructor is magic method in python
+       -> magic method becuase it get called automatically when object is created
+       -> used to initialize instance variable 
+       -> instance variable : value changes from object to object
+       -> name of contructor is fixed i.e __init__()
+       -> first parameter of contructor must be self
+---------------------------------------------------------------------------
+types of varibales
+       instance : ->the variable whos value changes from object to object      
+                  ->we need self to work with  instance variable
+
+       class    : ->the varible whos value is same for all object
+                  ->this variables present outside of all methods but inside of class
+                  ->this are also called as static variable
+                  ->this are like global varible : any method present inside a class can access them
+                  ->we need cls or class name to work with class varible
+
+       local :    ->the varible present inside any method for temp use
+                  ->we cant access this varibles outside of that method
+-------------------------------------------------------------------------------
+types of methods in OOP:
+there are 4 types of methods in OOP - constructor,instance,class and static method
+    instance method:
+   	- to work with instance variable
+   	- first parameter must be self
+   	- can called with:
+      		- inside class using self
+      		- outside class using rv
+    class method  
+   	- to work with class variable
+   	- declare with @classmethod decorator
+   	- first parameter must be cls
+   	- can call with :
+      		- in class - using class name or cls variable 
+      		- outside a class using class name or rv
+    static method :
+   	- this is genral utility method
+   	- declare with @staticmethod decorator
+   	- can call with :
+      		- in class - using class name 
+      		- outside a class using class name or rv
+----------------------------------------------------------------------------------
 
 Inheritance :
        problem : to access members (variables/methods) of one class to anther
@@ -38,11 +65,55 @@ Inheritance :
               2. IS-A 
 
        HAS-A:
-              when we want to access perticular member of one class to another
-              we can achive this by creating object of required class
+              -> when we want to access perticular member of one class to another
+              -> we can achive this by creating object of required class
        IS-A:
-              when we want to access all membrs of one class to another
-              we can cheive this by creating parent-child relationship
-              this parent child relationship is called as Inheritance
-              
-
+              -> when we want to access all membrs of one class to another
+              -> we can cheive this by creating parent-child relationship
+              -> this parent child relationship is called as Inheritance
+--------------------------------------------------------------------------------------              
+polymorphism :
+   - one entity with muitple forms
+   - has 2 types  
+      1. static/compile time polymorphism
+         -checked at compile
+         -method overloading
+            -multiple methods with same name in one class
+            -not supported in python , because python is dynamically typed programing lang
+            -if we are writting method with same name but with diff parameters, still overloading is 	     not suported
+      2. dynamic/run time polymorphism
+         -checked at run time
+         -method overridding
+            -when parent and child has methods with same name with same number of arguments
+            -supported in python
+            -why we need method overriding
+               1. when child is not happy with parents implementation (re-imlemetation)
+               2. when parent has some partial implementation
+            - super() is used when child wants to access members of parent having same name
+------------------------------------------------------------------------------------------------------
+Encapsulation:
+   - data hiding 
+   - by making members (properties and behaviours) private or protected
+   - private : use double underscore
+      - can be accessed only inside same class
+   - protected : use single underscore
+      - can be accessed in same class as well as derived class (child class)
+-------------------------------------------------------------------------------------------
+Abstraction:
+   - means partial implementation
+   - method or class can be abstract
+   - abstract method
+      - method with no imlemetation 
+      - this method must be in abstract class
+      - we cant create abstract method in non abstract class
+      - abstract method must have @abstractmethod decorator
+         -@abstractmethod decorator is present inside abc module
+   - abstract class
+      - if there is abstract method in a class, then only the class must be abstract class
+      - abstract class must be child of ABC class (ABC - Abstract Base Class)
+      - abstract class must contain at least on eabstract method and must be child of ABC
+         - ABC class present inside abc module
+      - we cant create object of abstract class (why?)
+      - abstract class can have non abstract method (concrete methods - methods with body)
+      - child class has to implememnt abstract class's abatrsct methods
+         - if child class is not providing implementation for its parents abstract methods then that 	   child class is also treated as abstract class
