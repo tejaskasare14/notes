@@ -1,0 +1,34 @@
+{
+   "products":[
+      {
+         "id":1,
+         "name":"cotton shirt",
+         "price":399,
+         "category":"clothes",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consectetur."
+      },
+      {
+         "id":2,
+         "name":"iphone 15",
+         "price":1599,
+         "category":"mobile",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consectetur."
+      },
+      {
+         "id":3,
+         "name":"women shirt",
+         "price":299,
+         "category":"clothes",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consectetur."
+      },
+      {
+         "id":4,
+         "name":"sony experia",
+         "price":5999,
+         "category":"tv",
+         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, consectetur."
+      }
+
+   ],
+   "users":[]
+}
