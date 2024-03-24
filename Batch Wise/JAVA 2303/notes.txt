@@ -1,0 +1,84 @@
+features of java
+   High level
+   Compiled
+   Platform independant
+   Secure
+   Strictly ttpes
+   OOP
+--------------------------------------------------------------------------
+Data types
+   Primitive: byte - short - int - long - float - double - boolean - char
+               1       2      4      8      4       8          1      2
+   Non primitive : class - object - interface - string - array
+class
+   plan or blueprint
+   logical entity
+object
+   physical existance of a class
+   actual entity
+   object has properties and behaviours
+   properties - varibles, behaviours - methods
+reference varible
+   used to access properties and behaviours of object
+   if there is no reference varible associated with object then that object is useless.
+      such useless objects are ready for garbage collection
+-------------------------------------------------------------
+creating first program
+
+- your file must have one public class having same name as file name  
+  ex - file name is Test.java the it must have public class Test{}
+- if there is zero public class in java file then you can create class(es) with any name
+  ex :  file name Test.java and this file is not having any public class then you can create
+        class(es) with any name like class Demo{} class Testy{} class Hello{}  class Test{}
+- at most one public class allowed in one java file
+- how to compile and run java code
+  file  : Test.java
+  classes : class Demo{} public class Test{}
+  >javac Test.java
+  after running this file, you will get 2 class files - Demo.class and Test.class
+  >java Test
+  >java Demo
+
+-------------------------------------------------------------------------------------
+understanding String[] args
+   - args is variable, used to store command line arguments
+   - command line arguments means, values which we pass while running java program
+   - program :
+         import java.util.Arrays;
+         public class StringArgs {
+            public static void main(String[] args) 
+            {
+               System.out.println(args);
+               System.out.println(Arrays.toString(args));
+               System.out.println(args[0]);
+               System.out.println(args[0] instanceof String);
+               System.out.println(args[0]+20);
+            } 
+         }
+   >JAVA 2303\Introduction>java StringArgs 10 20 30
+    [Ljava.lang.String;@2c7b84de
+    [10, 20, 30]
+    10
+    true
+    1020
+
+   - default datatype of args is array of string : String[] args
+   - args is not keyword, its just varible so we can use any name instead of args
+------------------------------------------------------------------------------
+understanding public static void main()
+public - access modifier 
+static - non access modifier
+void - return type (since our method is not returning anything, so ryruen type is void)
+main - method name
+
+Access Modifiers in java  - default, public, private and protected
+Non Access Modifiers in java - static, final, abstract, strictfp, native, synchronize, transient
+--------------------------------------------------
+operators : 
+   Arithmatic :+,-,*,/,**
+   unary : +,-,++,--
+   Assignment: =, +=, -= ,*= ,/=
+   Realational/Comparison : >,<,>=,<=!=,==
+   Logical : &&,||, !
+   Ternary : ?:
+   Bitwise :&, |, ^, <<, >>, ~
