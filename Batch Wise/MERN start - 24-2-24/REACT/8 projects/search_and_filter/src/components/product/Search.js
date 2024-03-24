@@ -1,7 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-export default function Search() {
+export default function Search(props) {
+  let [productName, setProdcutName] = useState('')
+
+  const submitForm = (event) =>{ 
+    event.preventDefault()
+    props.onSearch(productName)
+  }
+
+  const changeProductName = (event)=>
+  {
+    setProdcutName(event.target.value)
+  }
   return (
-    <div>Search</div>
+    <>
+      <form className="row g-3" onSubmit={submitForm}>
+        <div className="col-auto">
+          <label htmlFor="product_name" className="visually-hidden">Password</label>
+          <input type="text" className="form-control" id="product_name" placeholder="Product name" onChange={changeProductName}/>
+        </div>
+        <div className="col-auto">
+          <input type="submit" className="btn btn-primary mb-3"/>
+        </div>
+      </form>
+    </>
   )
 }
