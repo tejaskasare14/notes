@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      fetch('http://localhost:8000/api/employees/',{mode:"cors"})
+      .then(resp => resp.json().then(data=> console.log(data)).catch())
+      .catch()
+   </script>
+</body>
+</html>

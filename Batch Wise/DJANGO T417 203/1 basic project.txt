@@ -1,0 +1,8 @@
+1. create project
+2. change directory
+3. create application
+4. open project in vs code
+5. register created applications in settings.py
+6. create view in views.py and return httpresponse()
+	from django.http import httpresponse 
+7. create url for above view in urls.py
