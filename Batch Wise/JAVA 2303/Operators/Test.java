@@ -1,6 +1,21 @@
 public class Test 
 {
-   public static void main(String[] args) {
+
+   
+   // Realational/Comparison : >,<,>=,<=!=,==
+   // Logical : &&,||, !
+   // Ternary : ?:
+   // Bitwise :&, |, ^, <<, >>, ~
+   public static void main(String[] args) 
+   {
+     Test t = new Test();
+     //t.arithmatic(); 
+     t.assigmnet();  
+   }
+   // Arithmatic :+,-,*,/,**
+   // unary : +,-,++,--
+   public void arithmatic()
+   {
       System.out.println(10+2);
       System.out.println(10.2+2);
       System.out.println(10*2);
@@ -29,7 +44,19 @@ public class Test
 
       a-=5; //a = a - 5
       System.out.println(a);
-
-
    }
+
+   // Assignment: =, +=, -= ,*= ,/=
+   public void assigmnet()
+   {
+      int x = 10;
+      System.out.println(x);
+      x = x + 5; //10+5 //15
+      System.out.println(x);
+      x+=10; //x = x + 10;
+      System.out.println(x);
+      x*=2;
+      System.out.println(x);
+   }
+
 }

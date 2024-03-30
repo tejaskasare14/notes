@@ -6,10 +6,22 @@
    <title>Document</title>
 </head>
 <body>
-   <script>
-      fetch('http://localhost:8000/api/employees/',{mode:"cors"})
-      .then(resp => resp.json().then(data=> console.log(data)).catch())
-      .catch()
-   </script>
+   <div id="names"></div>
+   <script src="script.js"></script>
+
+   <!-- <table border="1" cellpadding="10" cellspacing="0" align="center">
+      <thead>
+         <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>DEPARTMENT</th>
+         </tr>
+      </thead>
+      <tbody id="table_row">
+         
+      </tbody>
+   </table> -->
+   <!-- <script src="script.js"></script> -->
 </body>
 </html>

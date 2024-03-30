@@ -16,8 +16,8 @@ export default function Search(props) {
     <>
       <form className="row g-3" onSubmit={submitForm}>
         <div className="col-auto">
-          <label htmlFor="product_name" className="visually-hidden">Password</label>
-          <input type="text" className="form-control" id="product_name" placeholder="Product name" onChange={changeProductName}/>
+          <input type="text" className="form-control" id="product_name" placeholder="Product name" 
+          onChange={changeProductName}/>
         </div>
         <div className="col-auto">
           <input type="submit" className="btn btn-primary mb-3"/>

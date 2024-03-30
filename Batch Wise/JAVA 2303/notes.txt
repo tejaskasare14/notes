@@ -23,6 +23,25 @@ reference varible
    if there is no reference varible associated with object then that object is useless.
       such useless objects are ready for garbage collection
 -------------------------------------------------------------
+Example : 
+public class Test 
+{
+   public static void main(String[] args) 
+   {
+      new Test(); //useless object
+      Test rv = new Test();  //rv is reference variable
+      rv.demo(); //accessing memebrs of object using reference variable
+     
+   }
+   
+  public void demo()
+   {
+      System.out.println("Hello Demo");
+   }
+
+} 
+
+-------------------------------------------------------
 creating first program
 
 - your file must have one public class having same name as file name  
@@ -73,6 +92,9 @@ main - method name
 
 Access Modifiers in java  - default, public, private and protected
 Non Access Modifiers in java - static, final, abstract, strictfp, native, synchronize, transient
+--------------------------------------------------
+if we do not provid main method in main class  then we will get main method not found error at runtime
+important : main method not found is runtime error, not compile time
 --------------------------------------------------
 operators : 
    Arithmatic :+,-,*,/,**

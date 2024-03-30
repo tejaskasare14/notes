@@ -28,19 +28,14 @@ function App() {
   }
 
   //searching logic
-const searchProduct = (productName) =>{
-  // console.log(products);
-    let searchedProducts = products.filter(product => product.name.toLowerCase().includes(productName.toLowerCase()))
+const searchProduct = (productName) =>
+{
 
-    if (products.length==0)
-    {
-      alert("No product found with name, "+ productName)
-    }
-    console.log(productName);
-     console.log(searchedProducts);
- setProducts(searchedProducts)
-
-  
+    let searchedProducts = products.filter(product => 
+                                            product.name.toLowerCase()
+                                            .includes(productName.toLowerCase())
+                                          )
+    setProducts(searchedProducts) 
 }
   
 
