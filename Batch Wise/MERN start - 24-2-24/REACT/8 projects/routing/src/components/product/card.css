@@ -1,0 +1,18 @@
+.card
+{
+   display: flex;
+   justify-content: space-evenly;
+   margin-top: 10px;
+}
+.card-items
+{
+   text-align: center;
+   border: 1px solid black;
+   padding: 15px;
+   border-radius: 25px;
+   box-shadow: 3px 5px 5px grey;
+}
+.card-items h2
+{
+   color: red;
+}

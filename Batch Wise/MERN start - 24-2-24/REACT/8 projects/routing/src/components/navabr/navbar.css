@@ -1,0 +1,22 @@
+.navbar{
+   background-color: aqua;
+}
+.navbar nav
+{
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   margin: 0 20px;
+}
+
+.navbar nav h1
+{
+  margin-right: auto; 
+}
+
+.navbar nav a.active
+{
+  text-decoration: none; 
+  background-color: red;
+  color: white;
+}

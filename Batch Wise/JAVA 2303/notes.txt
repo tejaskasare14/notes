@@ -45,7 +45,7 @@ public class Test
 creating first program
 
 - your file must have one public class having same name as file name  
-  ex - file name is Test.java the it must have public class Test{}
+  ex - file name is Test.java then it must have public class Test{}
 - if there is zero public class in java file then you can create class(es) with any name
   ex :  file name Test.java and this file is not having any public class then you can create
         class(es) with any name like class Demo{} class Testy{} class Hello{}  class Test{}
@@ -104,3 +104,46 @@ operators :
    Logical : &&,||, !
    Ternary : ?:
    Bitwise :&, |, ^, <<, >>, ~
+   -----------------------------------------------------------------------
+   Flow control
+      conditional statements :
+         if, if-else, if-elseif-else, nested if
+      switch
+      iterative:
+         for, while, do while
+      transfer
+         break, continue
+   -------------------------------------------------------------
+   loop steps :
+      initialization - condition - inc/dec - statements (code/body)
+   for loop - use when we know the end
+   
+   --------------------------------------------------------------
+   Array :
+      1. array in java is collection of similar datatype
+      2. it has fixed length
+      3. to access array element we have to use index
+         in java index is always zero based
+      4. creating array
+      there are 2 ways of creating an array
+         1. if we dont know elements
+            int[] marks = new int[size];
+            int marks[] = new int[size];
+            int []marks = new int[size];
+         2. if we know the elements
+            int[] marks = {95,96,99};
+            int marks[] = {95,96,99};
+            int []marks = {95,96,99};
+      5. drwabacks :
+         1. size is fixed
+         2. same datatype
+----------------------------------------------------
+break : 
+   to break the loop(iteration) based on some condition
+   control comes  out of the loop
+   may loop will not execute till the end
+continue :
+   to skip current iteration based on some condition
+   control goes to the next iteration
+   loop will 100% execute till the end
+
