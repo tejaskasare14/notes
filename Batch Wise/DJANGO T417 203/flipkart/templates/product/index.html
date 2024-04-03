@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <title>Document</title>
+   <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body>
+   <h1>Welcome {{name}},</h1>
+   <img src="{% static 'images/iphone.jpg'%}" alt="">
+   <table border="1" cellpadding=10 cellspacing=10 align='center'>
+      <tr>
+         <th>ID</th>
+         <th>NAME</th>
+         <th>DESCRIPTION</th>
+         <th>PRICE</th>
+      </tr>
+      {% for product in products %}
+      <tr>
+         <td>{{product.id}}</td>
+         <td>{{product.name}}</td>
+         <td>{{product.description}}</td>
+         <td>{{product.price}}</td>
+      </tr>
+      {% endfor%}
+   </table>
+</body>
+</html>
