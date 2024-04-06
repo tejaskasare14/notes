@@ -4,13 +4,14 @@ import './card.css'
 import { Link } from 'react-router-dom'
 
 export default function Product() {
+
   return (
   <div className='card'>
     {  
         products.map(product =>
           {
             return (
-                <div className='card-items'>
+                <div className='card-items' key={product.id}>
                     <img src={product.image} width="200px" height="200px"/>
                     <h2>{product.title}</h2>
                     <h4>Price : {product.price}</h4>

@@ -97,7 +97,7 @@ if we do not provid main method in main class  then we will get main method not 
 important : main method not found is runtime error, not compile time
 --------------------------------------------------
 operators : 
-   Arithmatic :+,-,*,/,**
+   Arithmatic :+,-,*,/,**,%
    unary : +,-,++,--
    Assignment: =, +=, -= ,*= ,/=
    Realational/Comparison : >,<,>=,<=!=,==
@@ -139,7 +139,7 @@ operators :
          2. same datatype
 ----------------------------------------------------
 break : 
-   to break the loop(iteration) based on some condition
+   to terminate the loop based on some condition
    control comes  out of the loop
    may loop will not execute till the end
 continue :
