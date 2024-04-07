@@ -146,4 +146,28 @@ continue :
    to skip current iteration based on some condition
    control goes to the next iteration
    loop will 100% execute till the end
+-----------------------------------------------------------------
+Constructor :
+	1. constructor is a method
+	2. having same name as class name
+	3. get called automatically when object is created	
+	4. used to intialize object level variable (instance variable)
+	5. there are two types of constructor
+		1. default construtor - given by JVM
+		2. parameterise constructor - created by us
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

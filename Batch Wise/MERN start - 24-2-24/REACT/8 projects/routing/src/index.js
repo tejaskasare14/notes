@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import Contact from './components/contact/Contact';
 import Product from './components/product/Product';
 import ProductDetails from './components/product/ProductDetails';
+import ReactHookFormm from './components/contact/ReactHookFormm';
 
 const routes=createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const routes=createBrowserRouter([
       },
       {
         path:'/contact',
-        element:<Contact/>
+        element:<ReactHookFormm/>
       },
       {
         path:'/product',
