@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <center>
+      <h1>Employee Data</h1>
+      <button><a href="/employee/add">Add new Employee</a></button>
+   </center>
+   <br>
+   <table border="1" align="center", cellpadding="10" cellspacing="0">
+      <tr>
+         <th>ID</th>
+         <th>NAME</th>
+         <th>SALARY</th>
+         <th>DESIGNATION</th>
+         <th colspan="2">ACTION</th>
+      </tr>
+      {% for employee in employees %}
+      <tr>
+         <td>{{employee.id}}</td>
+         <td>{{employee.name}}</td>
+         <td>{{employee.salary}}</td>
+         <td>{{employee.designation}}</td>
+         <td><button><a href="/employee/update/{{employee.id}}">Update</a></button></td>
+         <td><button><a href="/employee/delete/{{employee.id}}">Delete</a></button></td>
+      </tr>
+      {% endfor %}
+   </table>
+</body>
+</html>

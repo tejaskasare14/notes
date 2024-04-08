@@ -4,7 +4,11 @@ from user_generalform.models import User
 
 # Create your views here.
 def show_user(request):
-   return HttpResponse("User added to the table")
+   #return HttpResponse("User added to the table")
+   data={}
+   all_users = User.objects.all()
+   data['users']=all_users
+   return render(request,'user_generalform/show_user.html',context=data)
 
 def add_user(request):
    if request.method == 'POST':

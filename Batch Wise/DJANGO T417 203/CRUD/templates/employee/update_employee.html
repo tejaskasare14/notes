@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <form method="POST">
+      {% csrf_token %}
+      <fieldset>
+         <legend>Update Employee</legend>
+      <table align="center">
+         <tr>
+            <td><label for="name">Name :</label></td>
+            <td><input type="text" id="name" name="name" value={{employee.name}}></td>
+         </tr>
+         <tr>
+            <td><label for="salary">Salary :</label></td>
+            <td><input type="number" id="salary" name="salary" value={{employee.salary}}></td>
+         </tr>
+         <tr>
+            <td><label for="designation">Designation :</label></td>
+            <td><select name="designation" id="designation">
+               <option value="hr">HR</option>
+               <option value="manager">Manager</option>
+               <option value="trainer">Trainer</option>
+            </select></td>
+         </tr>
+         <tr>
+            <td><input type="submit"></td>
+         </tr>
+      </table>
+   </fieldset>
+   </form>
+
+</body>
+</html>
