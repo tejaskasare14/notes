@@ -1,0 +1,5 @@
+creating superuser
+navbar -> login, register, logout
+while login check whether he/she is superuser
+Authentication and session
+Product model
