@@ -1,0 +1,54 @@
+
+{% extends 'admin/admin.html' %}
+{% block adminbodycontent %}
+
+<div class="d-flex justify-content-center mt-2">
+   
+  <form class="w-50" method="POST">
+    {% csrf_token %}
+    <h1 class="text-center">Add new Product</h1>
+
+    {% if  error_msg %}
+    <div class="form-text text-danger">
+      {{error_msg}}
+    </div>
+    {% endif %}
+
+    <table class="table">
+      <tbody>
+        <tr>
+            <th><label for="name" class="form-label">Name</label></th>
+            <th><input type="text" class="form-control" id="name" name="name"></th> 
+        </tr>
+        <tr>
+            <th><label for="price" class="form-label">Price</label></th>
+            <th><input type="number" class="form-control" id="price" name="price"></th> 
+        </tr>
+        <tr>
+            <th><label for="description" class="form-label">Description</label></th>
+            <th><input type="text" class="form-control" id="description" name="description"></th> 
+        </tr>
+        <tr>
+            <th><label for="quantity" class="form-label">Quantity</label></th>
+            <th><input type="number" class="form-control" id="quantity" name="quantity"></th> 
+        </tr>
+        <tr>
+            <th><label for="username" class="form-label">Category</label></th>
+            <th>
+               <select class="form-select" aria-label="Default select example">
+                  <option selected>Open this select menu</option>
+                  <option value="1">Clothes</option>
+                  <option value="2">Mobile</option>
+                  <option value="3">Shoes</option>
+             </select></th> 
+        </tr>
+        <tr>
+         <th><label for="image" class="form-label">Image</label></th>
+         <th><input type="file" class="form-control" id="image" name="image"></th> 
+     </tr>
+      </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+  </form>   
+</div>
+ {% endblock adminbodycontent %} 

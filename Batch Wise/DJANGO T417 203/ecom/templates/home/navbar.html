@@ -1,0 +1,84 @@
+
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-shop"></i> &nbsp; Ecom</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Mobile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Shoes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Clothes</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sort By
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Price Low to High</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Price High to Low</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Price
+              </a>
+              <ul class="dropdown-menu">
+                <form role="search" class="m-2">
+                  <input class="form-control me-2 mb-2" type="search" placeholder="min" >
+                  <input class="form-control me-2 mb-2" type="search" placeholder="max" >
+                  <button class="btn btn-outline-primary w-100" type="submit">Find</button>
+                </form> 
+              </ul>
+            </li>
+          </ul>
+          {% comment %} <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> {% endcomment %}
+          <div>
+            
+           
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %} 
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+              </li>
+
+            {% else %}
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/register">Register</a>
+              </li>
+              
+              {% endif %}
+            </ul>
+           
+
+           
+          
+           
+           
+          </div>
+        </div>
+      </div>
+    </nav>

@@ -1,0 +1,59 @@
+
+{% extends 'admin/admin.html' %}
+{% block adminbodycontent %}
+
+<style>
+  #enlarge {
+    cursor: pointer; 
+    -webkit-transition-duration: 0.3s; 
+    -webkit-transition-timing-function: ease; 
+    } 
+    
+    /*change the number below to scale to the appropriate size*/ 
+    #enlarge:hover { 
+    transform: scale(5); 
+    
+    }
+</style>
+
+<div class="d-flex justify-content-center mt-2 container">
+
+  
+
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">ID</th>
+          <th scope="col">IMAGE</th>
+          <th scope="col">NAME</th>
+          <th scope="col">PRICE</th>
+          <th scope="col">CATEGORY</th>
+          <th scope="col">QUANTITY</th>
+          <th scope="col">DESCRIPTION</th>
+          <th scope="col" colspan="2">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-center">
+          <th>1</th>
+          <td>
+            <img id="enlarge" src="https://www.gearforlife.com.au/wp-content/uploads/smpli-Linen-shirt-white-mens-lifestyle-200x200.jpg" alt="" width="40px" height="40px">
+          </td>
+          <td>Shirt</td>
+          <td>750</td>
+          <td>Clothes</td>
+          <td>10</td>
+          <td>Good shirt</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr> 
+      </tbody>
+    </table>
+   
+  
+</div>
+ {% endblock adminbodycontent %} 
