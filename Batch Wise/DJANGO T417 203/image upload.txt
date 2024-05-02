@@ -1,0 +1,2 @@
+1. create media folder (like templates)
+2. register media folder in settings.py

@@ -4,7 +4,7 @@
 
 <div class="d-flex justify-content-center mt-2">
    
-  <form class="w-50" method="POST">
+  <form class="w-50" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <h1 class="text-center">Add new Product</h1>
 
@@ -33,19 +33,29 @@
             <th><input type="number" class="form-control" id="quantity" name="quantity"></th> 
         </tr>
         <tr>
-            <th><label for="username" class="form-label">Category</label></th>
+            <th><label for="category" class="form-label">Category</label></th>
             <th>
-               <select class="form-select" aria-label="Default select example">
+               <select class="form-select" name="category" id="category">
                   <option selected>Open this select menu</option>
-                  <option value="1">Clothes</option>
-                  <option value="2">Mobile</option>
-                  <option value="3">Shoes</option>
+                  <option value="cloth">Clothes</option>
+                  <option value="mobile">Mobile</option>
+                  <option value="shoe">Shoes</option>
              </select></th> 
         </tr>
         <tr>
          <th><label for="image" class="form-label">Image</label></th>
          <th><input type="file" class="form-control" id="image" name="image"></th> 
-     </tr>
+        </tr>
+        <tr>
+            <th>
+              <label class="form-check-label" for="is_available">Product available</label>
+            </th>
+            <th>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="is_available" name="is_available" checked>
+              </div>
+            </th>
+          </tr>
       </tbody>
     </table>
     <button type="submit" class="btn btn-primary w-100">Submit</button>
