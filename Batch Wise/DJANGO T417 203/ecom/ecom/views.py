@@ -2,10 +2,18 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from product.models import ProductTable
+from django.db.models import Q
 
 # Create your views here.
+# def home(request):
+#    return render(request,'base.html')
+
 def home(request):
-   return render(request,'base.html')
+   data={}
+   products=ProductTable.objects.filter(is_available=True)
+   data['products']=products
+   return render(request,'base.html',context=data)
 
 def user_login(request):
    data ={}
@@ -74,3 +82,11 @@ def admin_panel(request):
 
    return render(request,'admin/admin.html')
    
+# ----------------------- all logics ---------------------------------
+def filter_by_category(request,category_value):
+   #select * from product where is_available=True and category=category_value
+   #from django.db.models import Q
+   q1 = Q(is_available=True)
+   q2 = Q(category='mobile')
+   products=ProductTable.objects.filter(q1 & q2)
+   print(products)

@@ -34,23 +34,27 @@
         </tr>
       </thead>
       <tbody>
+        
+        {% for product in products %}
         <tr class="text-center">
-          <th>1</th>
+          <th>{{product.id}}</th>
           <td>
-            <img id="enlarge" src="https://www.gearforlife.com.au/wp-content/uploads/smpli-Linen-shirt-white-mens-lifestyle-200x200.jpg" alt="" width="40px" height="40px">
+            <img id="enlarge" src="http://127.0.0.1:8000/admin/product/media/{{product.image}}" alt="" width="40px" height="40px">
           </td>
-          <td>Shirt</td>
-          <td>750</td>
-          <td>Clothes</td>
-          <td>10</td>
-          <td>Good shirt</td>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.quantity}}</td>
+          <td>{{product.description}}</td>
           <td>
             <button type="button" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></button>
           </td>
           <td>
-            <button type="button" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+            <a type="button" class="btn btn-outline-danger" href="/admin/product/delete/{{product.id}}"><i class="bi bi-trash"></i></a>
           </td>
         </tr> 
+
+        {% endfor %}
       </tbody>
     </table>
    

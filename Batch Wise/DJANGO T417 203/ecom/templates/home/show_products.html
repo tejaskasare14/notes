@@ -1,0 +1,19 @@
+<div class="container mt-3">
+   <div class="row gx-1 gy-3">
+
+      {% for product  in products %}
+         <div class="col-lg-3">
+            <div class="card" style="width: 14rem;">
+               <img src="http://127.0.0.1:8000/admin/product/media/{{product.image}}" class="card-img-top" alt="..." height="200px">
+               <div class="card-body">
+                 <h5 class="card-title">{{product.name}}</h5>
+                 <h5 class="card-title">&#8377; {{product.price}}</h5>
+                 <p class="card-text">{{product.description}}</p>
+                 <a href="#" class="w-100 btn btn-primary">Add to cart</a>
+               </div>
+             </div>
+         </div>
+      {% endfor %}
+      
+   </div>
+</div>

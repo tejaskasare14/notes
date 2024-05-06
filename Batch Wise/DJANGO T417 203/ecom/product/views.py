@@ -21,4 +21,13 @@ def add_product(request):
    return render(request,'admin/product/add_product.html')
 
 def view_products(request):
-   return render(request,'admin/product/view_product.html')
+   data={}
+   products=ProductTable.objects.all()
+   # print(products.count())
+   data['products']=products
+   return render(request,'admin/product/view_product.html',context=data)
+
+def delete_product(request,productid):
+   product=ProductTable.objects.get(id=productid)
+   product.delete()
+   return redirect("/admin/product/view/")
