@@ -9,11 +9,7 @@ from django.db.models import Q
 # def home(request):
 #    return render(request,'base.html')
 
-def home(request):
-   data={}
-   products=ProductTable.objects.filter(is_available=True)
-   data['products']=products
-   return render(request,'base.html',context=data)
+
 
 def user_login(request):
    data ={}
@@ -83,10 +79,36 @@ def admin_panel(request):
    return render(request,'admin/admin.html')
    
 # ----------------------- all logics ---------------------------------
+products=ProductTable.objects.none()
+def home(request):
+   data={}
+   global products
+   global filtered_products
+   products=ProductTable.objects.filter(is_available=True)
+   filtered_products=products
+   data['products']=products
+   return render(request,'base.html',context=data)
+
+
 def filter_by_category(request,category_value):
+   data={}
    #select * from product where is_available=True and category=category_value
    #from django.db.models import Q
    q1 = Q(is_available=True)
-   q2 = Q(category='mobile')
-   products=ProductTable.objects.filter(q1 & q2)
-   print(products)
+   q2 = Q(category=category_value)
+   global products
+   global filtered_products
+   filtered_products=products.filter(q1 & q2)
+   data['products']=filtered_products
+   return render(request,'base.html',context=data)
+
+def sort_by_price(request,sort_value):
+   data={}
+   global filtered_products
+   #select * from product where is_available=True order by price desc
+   if(sort_value=='asc'):
+      sorted_products=filtered_products.filter(is_available=True).order_by('price')
+   else:
+      sorted_products=filtered_products.filter(is_available=True).order_by('-price')
+   data['products']=sorted_products
+   return render(request,'base.html',context=data)

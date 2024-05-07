@@ -24,6 +24,8 @@ urlpatterns = [
     path('login/', views.user_login),
     path('register/', views.user_register),
     path('logout/', views.user_logout),
+    path('category/<category_value>', views.filter_by_category),
+    path('sort/<sort_value>', views.sort_by_price),
     path('admin/product/', include('product.product_urls')),
     
 ]
