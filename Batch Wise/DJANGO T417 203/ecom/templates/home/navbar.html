@@ -39,10 +39,11 @@
                 Price
               </a>
               <ul class="dropdown-menu">
-                <form role="search" class="m-2">
-                  <input class="form-control me-2 mb-2" type="search" placeholder="min" >
-                  <input class="form-control me-2 mb-2" type="search" placeholder="max" >
-                  <button class="btn btn-outline-primary w-100" type="submit">Find</button>
+                <form class="m-2" action="/search/" method="POST">
+                  {% csrf_token %}
+                  <input class="form-control me-2 mb-2" type="number" placeholder="min" name="min">
+                  <input class="form-control me-2 mb-2" type="number" placeholder="max" name="max">
+                  <input class="btn btn-outline-primary w-100" type="submit">
                 </form> 
               </ul>
             </li>

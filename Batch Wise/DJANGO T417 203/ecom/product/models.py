@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -12,3 +14,8 @@ class ProductTable(models.Model):
    image=models.ImageField(upload_to='image')
    is_available=models.BooleanField()
    
+class CartTable(models.Model):
+   #uid_id
+   uid = models.ForeignKey(User,on_delete=models.CASCADE,db_column='uid')
+   pid = models.ForeignKey(ProductTable,on_delete=models.CASCADE,db_column='pid')
+   quantity=models.IntegerField()

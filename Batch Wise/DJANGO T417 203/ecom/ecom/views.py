@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from product.models import ProductTable
+from product.models import ProductTable,CartTable
 from django.db.models import Q
 
 # Create your views here.
@@ -112,3 +112,33 @@ def sort_by_price(request,sort_value):
       sorted_products=filtered_products.filter(is_available=True).order_by('-price')
    data['products']=sorted_products
    return render(request,'base.html',context=data)
+
+def search_by_price_range(request):
+   print("in search")
+   data={}
+   min=request.POST['min']
+   max=request.POST['max']
+   q1 = Q(is_available=True)
+   q2 = Q(price__gte=min)
+   q3 = Q(price__lte=max)
+   searched_products = filtered_products.filter(q1 & q2 & q3)
+   data['products']=searched_products
+   return render(request,'base.html',context=data)
+
+
+def add_to_cart(request,product_id):
+   if request.user.is_authenticated:
+      user=request.user
+      product=ProductTable.objects.get(id=product_id)
+      q1=Q(uid=request.user.id)
+      q2=Q(pid=product_id)
+      cart_value=CartTable.objects.filter(q1 & q2)
+      if(cart_value.count()>0):
+         pass
+      else:
+         cart = CartTable.objects.create(uid=user,pid=product,quantity=1)
+         cart.save()
+      return redirect('/')
+   else:
+      return redirect('/login')
+   
