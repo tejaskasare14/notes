@@ -28,6 +28,7 @@ urlpatterns = [
     path('sort/<sort_value>', views.sort_by_price),
     path('search/', views.search_by_price_range),
     path('product/<product_id>', views.add_to_cart),
+    path('cart/', views.show_cart),
     path('admin/product/', include('product.product_urls')),
     
 ]

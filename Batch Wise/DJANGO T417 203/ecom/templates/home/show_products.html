@@ -1,8 +1,34 @@
+
+
 <div class="container mt-3">
    <div class="row gx-1 gy-3">
 
+      
+
+       
+      {% if  messages %}
+         
+         {% for message in messages %}
+            
+            {% if message.tags == "error" %}
+               <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                  {{message}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            {% else %}
+               <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                  {{message}}
+               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+               </div>
+            {% endif %}
+               
+         {% endfor %}
+            
+       {% endif %}
+         
       {% for product  in products %}
          <div class="col-lg-3">
+            
             <div class="card" style="width: 14rem;">
                <img src="http://127.0.0.1:8000/admin/product/media/{{product.image}}" class="card-img-top" alt="..." height="200px">
                <div class="card-body">

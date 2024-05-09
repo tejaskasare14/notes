@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from product.models import ProductTable,CartTable
 from django.db.models import Q
+from django.contrib import messages
 
 # Create your views here.
 # def home(request):
@@ -87,8 +88,13 @@ def home(request):
    products=ProductTable.objects.filter(is_available=True)
    filtered_products=products
    data['products']=products
+   #getting cart count specific to logged in user
+   # user_id = request.user.id
+   # cart=CartTable.objects.filter(uid=user_id)
+   # data['cartvalue']=cart.count()
+   cart_count=find_cart_value(request)
+   data['cartvalue']=cart_count
    return render(request,'base.html',context=data)
-
 
 def filter_by_category(request,category_value):
    data={}
@@ -125,7 +131,6 @@ def search_by_price_range(request):
    data['products']=searched_products
    return render(request,'base.html',context=data)
 
-
 def add_to_cart(request,product_id):
    if request.user.is_authenticated:
       user=request.user
@@ -134,11 +139,26 @@ def add_to_cart(request,product_id):
       q2=Q(pid=product_id)
       cart_value=CartTable.objects.filter(q1 & q2)
       if(cart_value.count()>0):
-         pass
+         #from django.contrib import messages
+         messages.error(request, "Product is alredy in the cart")
       else:
          cart = CartTable.objects.create(uid=user,pid=product,quantity=1)
          cart.save()
+         messages.success(request,"Product is added to the cart")
       return redirect('/')
    else:
       return redirect('/login')
-   
+  
+def find_cart_value(request):
+   user_id = request.user.id
+   cart=CartTable.objects.filter(uid=user_id)
+   cart_count=cart.count()
+   return cart_count
+  
+def show_cart(request):
+   data={}
+   cart_count=find_cart_value(request)
+   data['cartvalue']=cart_count
+   products_in_cart=CartTable.objects.filter(uid=request.user.id)
+   data['cartproducts']=products_in_cart
+   return render(request,'home/show_cart.html',context=data) 

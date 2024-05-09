@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block bodycontent %}
+
+<div class="container">
+   <div class="row">
+      <div class="col-8">
+         <h1>Shopping cart</h1>
+         <hr class="divider">
+            
+         {% for product in cartproducts %}      
+         <div class="row">
+            <!-- display product image -->
+            <div class="col-4">
+               <img src="http://127.0.0.1:8000/admin/product/media/{{product.pid.image}}">
+            </div>
+
+            <!-- display product details with qunatity  -->
+            <div class="col-8">
+
+            </div>
+         </div>
+         <hr class="divider">
+         {% endfor %}
+      </div>
+      <div class="col-4"></div>
+   </div>
+</div>
+
+{% endblock bodycontent %} 
