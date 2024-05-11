@@ -16,13 +16,26 @@
 
             <!-- display product details with qunatity  -->
             <div class="col-8">
-
+                 <h1>{{product.pid.name}}</h1>
+                 <p>{{product.pid.description}}</p> 
+                 <p>&#8377; {{product.pid.price}}</p>
+                 <p>0.0</p>
+                 <a href="/cart/update/dec/{{product.id}}" class="btn btn-danger">-</a>
+                 <input type="text" value="{{product.quantity}}" class="text-center" disabled>
+                 <a href="/cart/update/inc/{{product.id}}" class="btn btn-success">+</a>
+                 <a href="/cart/delete/{{product.id}}" class="btn btn-danger">Delete</a>
             </div>
          </div>
          <hr class="divider">
          {% endfor %}
       </div>
-      <div class="col-4"></div>
+      <div class="col-4 border mt-5">
+         <h1>Hello,{{user.username|title}}</h1>
+         <hr>
+         <h2>Total Items : {{total_items}}</h2>
+         <h2>Total Price &nbsp; : &#8377; {{total_price}}</h2>
+         <a href="" class="btn btn-primary w-100">Place order</a>
+      </div>
    </div>
 </div>
 

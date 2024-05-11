@@ -157,8 +157,35 @@ def find_cart_value(request):
   
 def show_cart(request):
    data={}
+   total_items=0
+   total_price=0
    cart_count=find_cart_value(request)
    data['cartvalue']=cart_count
    products_in_cart=CartTable.objects.filter(uid=request.user.id)
    data['cartproducts']=products_in_cart
+   for product in products_in_cart:
+      total_items+=product.quantity
+      total_price+=(product.pid.price*product.quantity)
+   data['total_items']=total_items
+   data['total_price']=total_price
    return render(request,'home/show_cart.html',context=data) 
+
+
+def delete_cart(request,cart_id):
+   cart=CartTable.objects.get(id=cart_id)
+   cart.delete()
+   return redirect("/cart")
+
+def update_cart_quantity(request,flag,cart_id):
+   cart=CartTable.objects.filter(id=cart_id)
+   actual_qunatity=cart[0].quantity
+   if flag=='inc':
+      cart.update(quantity=actual_qunatity+1)
+   else:
+      if(cart[0].quantity==1):
+        pass
+      else:
+         cart.update(quantity=actual_qunatity-1)
+   return redirect("/cart")
+      
+   
