@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block bodycontent %}
+
+<div class="container">
+   <div class="row">
+      <div class="col-8">
+         <h1>Order Summary</h1>
+         <hr class="divider">
+            
+         <table class="table">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">IMAGE</th>
+                <th scope="col">PRODUCT</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANTITY</th>
+                <th scope="col">TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+               {% for product in cartproducts %}      
+              <tr class="text-center">
+                <td>
+                  <img src="http://127.0.0.1:8000/admin/product/media/{{product.pid.image}}" height="100" width="100">
+                </td>
+                <td>{{product.pid.name}}</td>
+                <td>{{product.pid.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{% widthratio product.pid.price 1 product.quantity %}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+      <div class="col-4 border mt-5">
+         <h1>Hello,{{user.username|title}}</h1>
+         <hr>
+         <h2>Total Items : {{total_items}}</h2>
+         <h2>Total Price &nbsp; : &#8377; {{total_price}}</h2>
+         <a href="/cart" class="btn btn-primary w-100">View Cart</a>
+         <a href="/make-payment" class="btn btn-success w-100 mt-2">Make Payment</a>
+      </div>
+   </div>
+</div>
+
+{% endblock bodycontent %} 

@@ -187,5 +187,36 @@ def update_cart_quantity(request,flag,cart_id):
       else:
          cart.update(quantity=actual_qunatity-1)
    return redirect("/cart")
+
+
+def show_order(request):
+   data={}
+   total_items=0
+   total_price=0
+   cart_count=find_cart_value(request)
+   data['cartvalue']=cart_count
+   products_in_cart=CartTable.objects.filter(uid=request.user.id)
+   data['cartproducts']=products_in_cart
+   for product in products_in_cart:
+      total_items+=product.quantity
+      total_price+=(product.pid.price*product.quantity)
+   data['total_items']=total_items
+   data['total_price']=total_price
+   return render(request,'home/show_order.html',context=data) 
+
+
+
+import razorpay
+def make_payment(request):
+   total_price=0
+   products_in_cart=CartTable.objects.filter(uid=request.user.id)
+   for product in products_in_cart:
+      total_price+=(product.pid.price*product.quantity)
+      
+   client = razorpay.Client(auth=("rzp_test_97GJ2rvcYmtUV6", "N0lPf0ifPlzeBdQRyueMNDOJ"))
+   data = { "amount": total_price*100, "currency": "INR", "receipt": "order_rcptid_11" }
+   payment = client.order.create(data=data)
+   print(payment)
+   return render(request,'home/pay.html',context=data)
       
    

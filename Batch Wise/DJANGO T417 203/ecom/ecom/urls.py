@@ -28,9 +28,14 @@ urlpatterns = [
     path('sort/<sort_value>', views.sort_by_price),
     path('search/', views.search_by_price_range),
     path('product/<product_id>', views.add_to_cart),
+    
     path('cart/', views.show_cart),
     path('cart/delete/<cart_id>', views.delete_cart),
     path('cart/update/<flag>/<cart_id>', views.update_cart_quantity),
+    
+    path('order/', views.show_order),
     path('admin/product/', include('product.product_urls')),
+    
+    path('make-payment/', views.make_payment),
     
 ]
