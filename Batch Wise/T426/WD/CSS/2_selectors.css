@@ -1,0 +1,15 @@
+/* tag selector  */
+h1{ color: blue; }
+
+/* id selector : if tags are same but required different style  */
+#h41_green { color: green; }
+
+#h42_red { color: red;}
+
+/* class selector : if tag are different but required same style */
+.in_orange{color: orange;}
+
+h1, #h41_green, .in_orange
+{
+   text-decoration: underline;
+}

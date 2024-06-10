@@ -1,0 +1,12 @@
+p>span
+{
+   color: red;
+}
+
+#d1 {display: none}
+
+#d2 {display: inline}
+
+#d3 {display: block}
+
+#d4 {display: inline-block}

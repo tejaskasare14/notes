@@ -1,0 +1,27 @@
+h1
+{
+   color: blue;
+   background-color: pink;
+   text-align: center;
+   font-size: 100px;
+   text-shadow: 5px 5px 5px grey;
+
+   font-family: "Recursive", sans-serif;
+   font-style: normal;
+   
+}
+
+#box
+{
+   height: 250px;
+   width: 150px;
+   border: 1px solid black;
+   margin-left: 450px;
+   padding: 0px 5px 0px 5px;
+   text-align: justify;
+
+   word-spacing: 5px;   
+   letter-spacing: 5px;
+   line-height: 25px;
+   text-indent: 20px;
+}
